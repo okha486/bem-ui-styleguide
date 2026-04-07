@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<title>layout</title>
+<style>
+@charset "utf-8";
+/* reset */
+* { margin:0; padding:0; box-sizing: border-box;}
+*::before, *::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+ul, ol, dl { margin:0; padding:0; }
+li, dt, dd { list-style: none; }
+html {
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+}
+fieldset {border:0;}
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+}
+img { max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button {
+  border:0;
+  font-family: inherit;
+  background:none;
+  cursor:pointer;
+}
+button:focus { outline: 2px solid #2a7de1; }
+caption, legend, .sr-only, .hidden, .IR {
+  overflow: hidden;
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+  border:0;
+}
+/* common settiong CSSS */
+
+
+/* block */
+.main-portal {
+    min-width: 320px;
+    padding: 8px;
+}
+
+/* header */
+.main-portal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px 10px;
+    border-bottom: 1px solid #999;
+}
+
+/* footer  */
+.main-portal__footer {
+    display: flex;
+    align-items: center;
+    padding: 0 8px 10px;
+}
+
+/* 포털 영역 */
+.main-portal__title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.main-portal__menu-button {
+    padding: 4px 8px;
+    border: 0;
+    background: transparent;
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* main layout */
+.main-portal__main {
+    display: grid;
+    gap: 12px;
+    margin-top: 8px;
+    grid-template-columns: 300px minmax(0, 1fr);
+    grid-template-areas:
+        "login service"  /* 왼쪽 위 로그인_오른쪽 전체 서비스 */
+        "notice service"; /* 왼쪽 아래 공지사항_오른쪽 전체 서비스 */
+    align-items: start;
+}
+
+/* left / right area */
+.main-portal__login,
+.main-portal__notice,
+.main-portal__service {
+    min-width: 0;
+    border: 1px solid #999;
+    background-color: #fff;
+}
+
+/* login */
+.main-portal__login {
+    grid-area: login;
+    min-height: 350px;
+    padding: 16px;
+}
+
+/* notice */
+.main-portal__notice {
+    grid-area: notice;
+    min-height: 350px;
+    padding: 16px;
+}
+
+.main-portal__notice-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.main-portal__notice-more {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.main-portal__notice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-portal__notice-link {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* service */
+.main-portal__service {
+    grid-area: service;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+.main-portal__service-head {
+    margin-bottom: 8px;
+}
+
+.main-portal__service-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.main-portal__service-list {
+    display: grid;
+    gap: 8px;
+}
+
+.main-portal__service-item {
+    border: 1px solid #999;
+    background-color: #fff;
+}
+
+.main-portal__service-link {
+    display: block;
+    min-height: 122px;
+    padding: 16px 18px;
+}
+
+.main-portal__service-name {
+    display: block;
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.main-portal__service-desc {
+    display: block;
+    margin-top: 6px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* common title */
+.main-portal__section-title {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+    .main-portal__main {
+        grid-template-columns: 160px minmax(0, 1fr);
+    }
+
+    .main-portal__service-name {
+        font-size: 1.5rem;
+    }
+
+    .main-portal__service-desc,
+    .main-portal__section-title {
+        font-size: 0.9375rem;
+    }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    .main-portal {
+        padding: 12px;
+    }
+
+    .main-portal__header {
+        padding: 0 0 10px;
+    }
+
+    .main-portal__title {
+        font-size: 1.5rem;
+    }
+
+    /* 모바일경우 공지사항임 맨 아래로 내려감 */
+    .main-portal__main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "login"
+            "service"
+            "notice";
+    }
+
+    .main-portal__login,
+    .main-portal__notice {
+        min-height: auto;
+        padding: 14px;
+    }
+
+    .main-portal__service-link {
+        min-height: auto;
+        padding: 14px;
+    }
+
+    .main-portal__section-title {
+        font-size: 1.25rem;
+    }
+
+    .main-portal__service-title {
+        font-size: 0.9375rem;
+    }
+
+    .main-portal__service-name {
+        font-size: 1.125rem;
+    }
+
+    .main-portal__service-desc {
+        font-size: 0.875rem;
+    }
+}
+</style>
+
+</head>
+<body>
+    <div class="main-portal">
+        <header class="main-portal__header">
+            <h1 class="main-portal__title" tabindex="0">헤더</h1>
+            <button type="button" class="main-portal__menu-button">
+                <span class="sr-only">전체 메뉴 열기</span>
+                ☰
+            </button>
+        </header>
+
+        <main class="main-portal__main">
+            <!-- 로그인 -->
+            <section class="main-portal__login" aria-labelledby="login-title">
+                <h2 id="login-title" class="main-portal__section-title">로그인</h2>
+                <div>
+                    <label for="id">아이디</label>
+                    <input type="text" id="id">
+                </div>
+                <div>
+                    <label for="password">패스워드</label>
+                    <input type="text" id="password">
+                </div>
+                <div class="button-group button-group--center" role="group">
+                    <button type="button" class="button">회원가입</button>
+                    <button type="button" class="button">로그인</button>
+                </div>
+            </section>
+
+            <!-- 오른쪽 영역 -->
+            <section class="main-portal__service" aria-labelledby="service-title">
+                <div class="main-portal__service-head">
+                    <h2 id="service-title" class="main-portal__service-title">
+                        원자력안전통합정보시스템 전체 업무
+                    </h2>
+                </div>
+
+                <ul class="main-portal__service-list">
+                    <li class="main-portal__service-item">
+                        <a href="#" class="main-portal__service-link">
+                            <strong class="main-portal__service-name">
+                                방사선 안전교육 (EDU-RW)
+                            </strong>
+                            <span class="main-portal__service-desc">
+                                Radiation Safety Training
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="main-portal__service-item">
+                        <a href="#" class="main-portal__service-link">
+                            <strong class="main-portal__service-name">
+                                항공승무원 우주방사선 안전교육 (EDU-CR)
+                            </strong>
+                            <span class="main-portal__service-desc">
+                                Cosmic Radiation / Space Radiation Safety Training for Cabin Crew
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="main-portal__service-item">
+                        <a href="#" class="main-portal__service-link">
+                            <strong class="main-portal__service-name">
+                                방사선종사자 방호정보통합관리 (RAWIS)
+                            </strong>
+                            <span class="main-portal__service-desc">
+                                Radiation Worker Information Service System
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="main-portal__service-item">
+                        <a href="#" class="main-portal__service-link">
+                            <strong class="main-portal__service-name">
+                                수출입요건확인 (GATE)
+                            </strong>
+                            <span class="main-portal__service-desc">
+                                Import/Export Requirement Confirmation System
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 공지사항 -->
+            <section class="main-portal__notice" aria-labelledby="notice-title">
+                <div class="main-portal__notice-head">
+                    <h2 id="notice-title" class="main-portal__section-title">전체 공지사항</h2>
+                    <a href="#" class="main-portal__notice-more">더보기</a>
+                </div>
+
+                <ul class="main-portal__notice-list">
+                    <li class="main-portal__notice-item">
+                        <a href="#" class="main-portal__notice-link">공지사항 제목이 들어갑니다.</a>
+                    </li>
+                    <li class="main-portal__notice-item">
+                        <a href="#" class="main-portal__notice-link">시스템 점검 안내</a>
+                    </li>
+                    <li class="main-portal__notice-item">
+                        <a href="#" class="main-portal__notice-link">교육 신청 일정 안내</a>
+                    </li>
+                </ul>
+            </section>
+            
+        </main>
+
+        <footer class="main-portal__footer">
+            <span>푸터</span>
+        </footer>
+    </div>
+
+</body>
+</html>
