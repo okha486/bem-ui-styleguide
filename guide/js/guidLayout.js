@@ -1,14 +1,14 @@
 // 가이드 보기위한 스트립트
 $(function () {
-    $('main > .section').each(function (i) {
+    $('main > .component-doc').each(function (i) {
         // 아이디값 넣기
-        $('main > .section').eq(i).attr('id', 'section' + i);
+        $('main > .component-doc').eq(i).attr('id', 'component-doc' + i);
 
         // 메뉴 생성
         $('header nav').append('<a href="#section' + i + '">' + $(this).find(' > h2').text() + '</a>');
 
         // 마크업 한 번 넣어도 소스 저절로 생성되게
-        $('main > .section').eq(i).find('> .group').each(function (j) {
+        $('main > .component-doc').eq(i).find('> .component-doc__group').each(function (j) {
             $(this).find('> pre').text($(this).find('> .item').html());
 
             // 소스 복사 버튼 생성
@@ -20,7 +20,7 @@ $(function () {
     });
 
     // 소스 복사
-    $('main > .section > .group').find('> button').on('click', function () {
+    $('main > .component-doc > .component-doc__group').find('> button').on('click', function () {
         $(this).siblings('textarea').select();
 
         document.execCommand('Copy');
