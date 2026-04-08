@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="../css/styleCore.css">
     <link rel="stylesheet" href="../css/shThemeEclipse.css">
 
-
     <!-- 사용 컨텐츠 스타일 참고 파일(사용파일) -->
     <link rel="stylesheet" href="../css/styleguide.css">
+    <link rel="stylesheet" href="../css/component.css">
 
     <!-- 라이브러리 -->
     <script src="../js/jquery-3.5.1.min.js"></script>
@@ -34,13 +34,24 @@
     <script src="../js/styleguide.js"></script>
 </head>
 <body>
-<div id="styleguide">
-    <main class="component" style="margin:0;">
-        <h1 class="component__title">레이아웃 표현</h1>
+<div id="styleguide" class="component-page">
+    <a href="#component-content" class="component-page__skip">본문 바로가기</a>
 
-        <section class="section">
-            <article class="group">
-                <h3>뱃지(Badge)</h3>
+    <header class="component-page__header">
+      <div class="component-page__header-inner">
+        <p class="component-page__eyebrow">Component Guide</p>
+        <h1 class="component-page__title">Layout UI</h1>
+        <p class="component-page__intro">
+          Layout 컴포넌트의 기본 구조, 상태, 변형을 정리한 문서입니다.
+        </p>
+      </div>
+    </header>
+
+    <main class="component-page__content">
+
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>뱃지(Badge)</h2>
                 <div class="item"> 
                     
                     <span class="badge">뱃지</span>
@@ -51,10 +62,9 @@
             </article>
         </section>
 
-
-        <section class="section">
-            <article class="group">
-                <h3>Popup (Modal)</h3>
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>Popup (Modal)</h2>
                 <div class="item"> 
                     
                     <button type="button" class="button" id="openModal"
@@ -105,9 +115,9 @@
 
         </section>
 
-        <section class="section">
-            <article class="group">
-                <h3>accordion(아코디언)</h3>
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>accordion(아코디언)</h2>
                 <div class="item"> 
 
                     <div class="accordion">
@@ -167,9 +177,9 @@
             </article>
         </section>
 
-        <section class="section">
-            <article class="group">
-                <h3>슬라이드 / swiper.js</h3>
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>슬라이드 / swiper.js</h2>
                 <div class="item"> 
 
                     <div class="carousel">
@@ -203,9 +213,9 @@
             </article>
         </section>
 
-        <section class="section">
-            <article class="group">
-                <h3>링크 이미지</h3>
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>링크 이미지</h2>
                 <div class="item"> 
                     
                     <a href="#" target="_blank" class="image image--link">
@@ -222,9 +232,9 @@
             </article>
         </section>
 
-        <section class="section">
-            <article class="group">
-                <h3>이미지</h3>
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>이미지</h2>
                 <div class="item"> 
                     
                     <div class="image">
@@ -236,9 +246,9 @@
             </article>
         </section>
 
-        <section class="section">
-            <article class="group">
-                <h3>캡션이 필요한 이미지</h3>
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>캡션이 필요한 이미지</h2>
                 <div class="item"> 
                     
                     <figure class="image">
@@ -253,19 +263,10 @@
             </article>
         </section>
 
-        <section class="section">
-            <article class="group">
-                <h3>링크 이미지</h3>
-                <div class="item"> 
-                    
-               
-                                     
-                </div>
-                <pre class="brush: html gutter: false;"></pre>
-            </article>
-        </section>
-
     </main>
+    <footer class="component-page__footer">
+      <a href="../index.html" class="component-page__back-link">목록으로 돌아가기</a>
+    </footer>
 </div>
 </body>
 </html>

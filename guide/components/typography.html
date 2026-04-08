@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="../css/styleCore.css">
     <link rel="stylesheet" href="../css/shThemeEclipse.css">
 
-
     <!-- 사용 컨텐츠 스타일 참고 파일(사용파일) -->
     <link rel="stylesheet" href="../css/styleguide.css">
+    <link rel="stylesheet" href="../css/component.css">
 
     <!-- 라이브러리 -->
     <script src="../js/jquery-3.5.1.min.js"></script>
@@ -34,13 +34,24 @@
     <script src="../js/styleguide.js"></script>
 </head>
 <body>
-<div id="styleguide">
-    <main class="component" style="margin:0;">
-        <h1 class="component__title">타이틀/텍스트</h1>
+<div id="styleguide" class="component-page">
+    <a href="#component-content" class="component-page__skip">본문 바로가기</a>
 
-        <section class="section">
-            <article class="group">
-                <h3>타이틀</h3>
+    <header class="component-page__header">
+      <div class="component-page__header-inner">
+        <p class="component-page__eyebrow">Component Guide</p>
+        <h1 class="component-page__title">Typography</h1>
+        <p class="component-page__intro">
+          Typography 컴포넌트의 기본 구조, 상태, 변형을 정리한 문서입니다.
+        </p>
+      </div>
+    </header>
+
+    <main class="component-page__content">
+
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>타이틀</h2>
                 <div class="item"> 
                     
                     <h2 class="title title--level-2">본인확인</h2>
@@ -52,9 +63,9 @@
             </article>
         </section>
 
-        <section class="section">
-            <article class="group">
-                <h3>텍스트</h3>
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>텍스트</h2>
                 <div class="item"> 
                     
                     <p class="txt">기본 폰트 16px </p>
@@ -79,6 +90,9 @@
         </section>
 
     </main>
+    <footer class="component-page__footer">
+      <a href="../index.html" class="component-page__back-link">목록으로 돌아가기</a>
+    </footer>
 </div>
 </body>
 </html>
