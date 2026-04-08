@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="../css/styleCore.css">
     <link rel="stylesheet" href="../css/shThemeEclipse.css">
 
-
     <!-- 사용 컨텐츠 스타일 참고 파일(사용파일) -->
     <link rel="stylesheet" href="../css/styleguide.css">
+    <link rel="stylesheet" href="../css/component.css">
 
     <!-- 라이브러리 -->
     <script src="../js/jquery-3.5.1.min.js"></script>
@@ -34,13 +34,24 @@
     <script src="../js/styleguide.js"></script>
 </head>
 <body>
-<div id="styleguide">
-    <main class="component" style="margin:0;">
-        <h1 class="component__title">박스</h1>
+<div id="styleguide" class="component-page">
+    <a href="#component-content" class="component-page__skip">본문 바로가기</a>
 
-        <section class="section">
-            <article class="group">
-                <h3>박스1</h3>
+    <header class="component-page__header">
+      <div class="component-page__header-inner">
+        <p class="component-page__eyebrow">Component Guide</p>
+        <h1 class="component-page__title">Box</h1>
+        <p class="component-page__intro">
+          Box 컴포넌트의 기본 구조, 상태, 변형을 정리한 문서입니다.
+        </p>
+      </div>
+    </header>
+
+    <main class="component-page__content">
+        
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>박스1</h2>
                 <div class="item"> 
                     
                     <div class="box box--line">
@@ -52,9 +63,9 @@
             </article>
         </section>
 
-        <section class="section">
-            <article class="group">
-                <h3>박스2 hover</h3>
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>박스2 hover</h2>
                 <div class="item"> 
 
                     <div class="box box--hover">
@@ -66,9 +77,9 @@
             </article>
         </section>
 
-        <section class="section">
-            <article class="group">
-                <h3>박스3 box_group</h3>
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>박스3 box_group</h2>
                 <div class="item"> 
 
                     <div class="box">
@@ -85,9 +96,9 @@
             </article>
         </section>
 
-        <section class="section">
-            <article class="group">
-                <h3>검색 박스 - 그리드 정렬</h3>
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>검색 박스 - 그리드 정렬</h2>
                 <div class="item"> 
 
                     <form class="search-form" action="#" method="get">
@@ -119,9 +130,9 @@
             </article>
         </section>
 
-        <section class="section">
-            <article class="group">
-                <h3>검색박스</h3>
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>검색박스</h2>
                 <div class="item"> 
 
                     <form action="/search" method="get" class="search-form">
@@ -171,9 +182,9 @@
             </article>
         </section>
 
-        <section class="section">
-            <article class="group">
-                <h3>목록 - 상단검색</h3>
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>목록 - 상단검색</h2>
                 <div class="item"> 
 
                     <div class="board-header">
