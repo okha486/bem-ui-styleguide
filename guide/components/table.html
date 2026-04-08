@@ -51,7 +51,55 @@
         
         <section class="component-doc">
             <article class="component-doc__group">
-                <h2>기본테이블2</h2>
+                <h2>테이블 열이 많은경우 가로 스크롤 생김</h2>
+                <div class="item"> 
+                    
+                    <div class="table-wrapper table-wrapper--scroll" tabindex="0">
+                        <table class="table table--basic">
+                            <caption class="table__caption">기본 테이블-스크롤생김</caption>
+                            <colgroup>
+                                <col style="width:10%">
+                                <col style="width:20%">
+                                <col style="width:25%">
+                                <col style="width:20%">
+                                <col style="width:25%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">이름</th>
+                                    <th scope="col">이메일</th>
+                                    <th scope="col">연락처</th>
+                                    <th scope="col">가입일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>홍길동</td>
+                                    <td>test01@email.com</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2026-02-01</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>김영희</td>
+                                    <td>test02@email.com</td>
+                                    <td>010-9876-5432</td>
+                                    <td>2026-02-15</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>테이블 반응형</h2>
                 <div class="item"> 
                     
                     <div class="table-wrapper" tabindex="0">
@@ -99,42 +147,56 @@
 
         <section class="component-doc">
             <article class="component-doc__group">
-                <h2>테이블 열이 많은경우 가로 스크롤 생김</h2>
+                <h2>form 테이블</h2>
                 <div class="item"> 
                     
-                    <div class="table-wrapper table-wrapper--scroll" tabindex="0">
-                        <table class="table table--basic">
-                            <caption class="table__caption">기본 테이블-스크롤생김</caption>
+                    <div class="table-wrapper" tabindex="0">
+                        <table class="table table--form">
+                            <caption class="table__caption">폼 테이블</caption>
                             <colgroup>
-                                <col style="width:10%">
                                 <col style="width:20%">
-                                <col style="width:25%">
+                                <col style="width:30%">
                                 <col style="width:20%">
-                                <col style="width:25%">
+                                <col style="width:30%">
                             </colgroup>
-                            <thead>
-                                <tr>
-                                    <th scope="col">번호</th>
-                                    <th scope="col">이름</th>
-                                    <th scope="col">이메일</th>
-                                    <th scope="col">연락처</th>
-                                    <th scope="col">가입일</th>
-                                </tr>
-                            </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>홍길동</td>
-                                    <td>test01@email.com</td>
-                                    <td>010-1234-5678</td>
-                                    <td>2026-02-01</td>
+                                    <th scope="row">사용자</th>
+                                    <td>
+                                        <label for="user" class="sr-only">사용자</label>
+                                        <input
+                                        type="text"
+                                        id="user"
+                                        class="data-form-table__input"
+                                        >
+                                    </td>
+                                    <th scope="row">선택</th>
+                                    <td>
+                                        <label for="status-1" class="sr-only">사용자 1 상태</label>
+                                        <select id="status-1" class="data-form-table__select">
+                                            <option>활성</option>
+                                            <option>비활성</option>
+                                        </select>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>2</td>
-                                    <td>김영희</td>
-                                    <td>test02@email.com</td>
-                                    <td>010-9876-5432</td>
-                                    <td>2026-02-15</td>
+                                    <th scope="row">입력</th>
+                                    <td>
+                                        <label for="user" class="sr-only">입력</label>
+                                        <input
+                                            type="text"
+                                            id="user"
+                                            class="data-form-table__input"
+                                        >
+                                    </td>
+                                    <th scope="col">선택</th>
+                                    <td>
+                                        <label for="status-1" class="sr-only">사용자 1 상태</label>
+                                        <select id="status-1" class="data-form-table__select">
+                                            <option>활성</option>
+                                            <option>비활성</option>
+                                        </select>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
