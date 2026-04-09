@@ -51,18 +51,15 @@
 
         <section class="component-doc">
             <article class="component-doc__group">
-                <h2>링크버튼</h2>
+                <h2>크기</h2>
                 <div class="item"> 
                     
-                    <a href="#" class="button button--txt underline">링크</a>
-                    <a href="#" class="button button--txt underline" target="_blank" title="새 창 열림">
-                        바로가기 
-                        <i class="ri-chat-new-line"></i>
-                    </a>
-                    <a href="#" class="button button--txt underline">
-                        자세히 보기
-                        <i class="ri-arrow-right-long-line"></i>
-                    </a>
+                    <div class="button-group" role="group" aria-label="버튼그룹">
+                        <button type="button" class="button button--xs">button--xs</button>
+                        <button type="button" class="button button--sm">button--sm</button>
+                        <button type="button" class="button button--md">button--md</button>
+                        <button type="button" class="button button--lg">button--lg</button>
+                    </div>
 
                 </div>
                 <pre class="brush: html gutter: false;"></pre>
@@ -71,16 +68,15 @@
 
         <section class="component-doc">
             <article class="component-doc__group">
-                <h2>버튼 크기</h2>
+                <h2>계층</h2>
                 <div class="item"> 
                     
-                    <div class="button-group" role="group" aria-label="버튼그룹">
-                        <button type="button" class="button button--xs">button--xs</button>
-                        <button type="button" class="button button--sm">button--sm</button>
-                        <button type="button" class="button button--md">button--md</button>
-                        <button type="button" class="button button--lg" disabled>button--lg</button>
+                    <div class="button-group" role="group">
+                        <button type="button" class="button button--primary">primary</button>
+                        <button type="button" class="button button--secondary">secondary</button>
+                        <button type="button" class="button button--line">line</button>
+                        <button type="button" class="button" onclick="alert('Hello World!')"  disabled>disabled</button>
                     </div>
-
                 </div>
                 <pre class="brush: html gutter: false;"></pre>
             </article>
@@ -92,17 +88,17 @@
                 <div class="item"> 
                     
                     <div class="button-group button-group--start" role="group">
-                        <a class="button" href="/list">목록</a>
-                        <button type="button" class="button" disabled>등록</button>
+                        <button type="button" class="button">목록</button>
+                        <button type="button" class="button">등록</button>
                         <button type="button" class="button">수정</button>
                     </div>
 
                     <br>
 
                     <div class="button-group button-group--center" role="group">
-                        <a class="button" href="/list">목록</a>
-                        <a class="button" href="/write">등록</a>
+                        <button type="button" class="button">등록</button>
                         <button type="button" class="button">수정</button>
+                        <button type="button" class="button">삭제</button>
                     </div>
 
                     <br>
@@ -132,7 +128,27 @@
 
         <section class="component-doc">
             <article class="component-doc__group">
-                <h2>이미지/아이콘 텍스트 버튼</h2>
+                <h2>텍스트</h2>
+                <div class="item"> 
+                    
+                    <a href="#" class="button button--txt underline">링크</a>
+                    <a href="#" class="button button--txt underline" target="_blank" title="새 창 열림">
+                        바로가기 
+                        <i class="ri-chat-new-line"></i>
+                    </a>
+                    <a href="#" class="button button--txt underline">
+                        자세히 보기
+                        <i class="ri-arrow-right-long-line"></i>
+                    </a>
+
+                </div>
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>이미지/아이콘</h2>
                 <div class="item"> 
                     
                     <div class="button-group" role="group" aria-label="버튼그룹">
@@ -159,7 +175,7 @@
 
         <section class="component-doc">
             <article class="component-doc__group">
-                <h2>아이콘 버튼</h2>
+                <h2>아이콘</h2>
                 <div class="item"> 
                     
                     <!-- 버튼 아이콘 -->
