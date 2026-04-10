@@ -219,6 +219,39 @@
             </article>
         </section>
 
+        <section id="component-accessibility" class="component-doc" aria-labelledby="component-accessibility-title">
+            <div class="component-doc__section">
+            <h2 id="component-accessibility-title" class="component-doc__title">접근성 유의사항</h2>
+
+            <dl class="component-doc__note-list">
+                <div class="component-doc__note-item">
+                    <dt class="component-doc__note-term">모든 버튼은 키보드로 접근하고 조작할 수 있도록 한다.</dt>
+                    <dd class="component-doc__note-desc">비활성화, 사용불가 상태인 경우를 제외하고 모든 버튼은 키보드로 접근하고 조작할 수 있도록 해야 한다</dd>
+                </div>
+                <div class="component-doc__note-item">
+                    <dt class="component-doc__note-term">버튼의 키보드 초점이 명확하게 표시되도록 한다.</dt>
+                    <dd class="component-doc__note-desc">
+                        모든 버튼은 초점을 받은 상태가 시각적으로 명확하게 구분되어야 한다. <br>
+                        가능한 한 포커스링의 스타일은 사용자 에이전트에서 제공하는 기본 스타일을 유지한다. <br>
+                        만약 포커스링 스타일에 변경이 필요하다면 모든 유형의 버튼에서 포커스링이 가려지지 않고 
+                        명확하게 표시되며 인접 배경과 3:1 이상의 명도 대비를 갖는지 확인해야 한다.
+                    </dd>
+                </div>
+                <div class="component-doc__note-item">
+                    <dt class="component-doc__note-term">버튼으로 작동하는 모든 요소는 스크린 리더에서 버튼으로 인지될 수 있도록 한다.</dt>
+                    <dd class="component-doc__note-desc">[button]대신 불가피하게 다른 태그를 사용해야 하는 경우 role="button"을 사용하여 스크린 리더에서 요소의 역할이 버튼으로 인식될 수 있도록 해야 한다.</dd>
+                </div>
+                <div class="component-doc__note-item">
+                    <dt class="component-doc__note-term">버튼을 적절한 크기로 제공한다.</dt>
+                    <dd class="component-doc__note-desc">
+                        클릭, 터치 영역을 정교하게 조작하기 어려운 사용자를 고려하여, 마우스 상호작용에 대해서는 17px * 17px,
+                        터치 상호작용에 대해서는 44px * 44px 이상의 영역에서 반응할 수 있는 컨트롤 크기를 사용할 것을 권장한다
+                    </dd>
+                </div>
+            </dl>
+            </div>
+        </section>
+
     </main>
     <footer class="component-page__footer">
       <a href="../index.html" class="component-page__back-link">목록으로 돌아가기</a>

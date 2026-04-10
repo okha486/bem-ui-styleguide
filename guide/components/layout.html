@@ -22,6 +22,7 @@
     <!-- 라이브러리 -->
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/jquery-ui.js"></script>
+    <script src="../js/jquery.cookie.js" ></script>
     <script src="../js/swiper/js/swiper-bundle.js"></script>
     <script src="../js/swiper/js/swiper-bundle.min.js"></script>
 
@@ -56,63 +57,11 @@
                     
                     <span class="badge">뱃지</span>
                     <span class="badge badge--gray">뱃지 gray</span>
+                    <span class="badge badge--red">뱃지 red</span>
                                      
                 </div>
                 <pre class="brush: html gutter: false;"></pre>
             </article>
-        </section>
-
-        <section class="component-doc">
-            <article class="component-doc__group">
-                <h2>Popup (Modal)</h2>
-                <div class="item"> 
-                    
-                    <button type="button" class="button" id="openModal"
-                       role="button" 
-                       aria-haspopup="dialog" 
-                       aria-pressed="false"
-                   > 모달 열기 </button>
-                                     
-                </div>
-                <pre class="brush: html gutter: false;"></pre>
-            </article>
-
-            <!-- 모달 내용 -->
-            <div
-                class="modal"
-                id="modalSample"
-                aria-hidden="true"
-            >
-                <div class="modal__dim" data-modal-close></div>
-
-                <div
-                    class="modal__dialog"
-                    role="dialog"
-                    aria-modal="true"
-                    aria-labelledby="modalTitle"
-                    aria-describedby="modalDesc"
-                    tabindex="-1"
-                >
-                    <div class="modal__head">
-                        <h2 class="modal__title" id="modalTitle">모달 제목</h2>
-                        <button type="button" class="modal__close" data-modal-close aria-label="모달 닫기">
-                            <i class="ri-close-large-line"></i>
-                            <span class="sr-only">모달 닫기</span>
-                        </button>
-                    </div>
-
-                    <div class="modal__body" id="modalDesc">
-                        <p>여기에 모달 내용을 넣으면 됩니다.</p>
-                        <p>ESC 키로 닫기, 딤 클릭 닫기, 포커스 유지까지 기본 처리되어 있습니다.</p>
-                    </div>
-
-                    <div class="modal__foot">
-                        <button type="button" class="button" data-modal-close>취소</button>
-                        <button type="button" class="button button--primary">확인</button>
-                    </div>
-                </div>
-            </div>
-
         </section>
 
         <section class="component-doc">
@@ -267,6 +216,7 @@
     <footer class="component-page__footer">
       <a href="../index.html" class="component-page__back-link">목록으로 돌아가기</a>
     </footer>
+    
 </div>
 </body>
 </html>
