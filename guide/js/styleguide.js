@@ -12,10 +12,11 @@ $(function () {
     fnTab();    // 탭
     fnShowBtn(); // 화살표 위_아래 토글 버튼
     fnAccordion();  // 아코디언 메뉴
-    fnSwiper(); // 슬라이드
-    fnModal();  // 팝업 (모달)
+    fnModal();  // 팝업 (레이어)
+    fnBannerPop(); // 배너 클릭 팝업
     fnZooms(); // 축소,확대 - zoom_container 영역지정
     fnZoomBody(); // 축속,확대 - body
+    fnSwiper(); // 슬라이드
 });
 
 
@@ -87,7 +88,6 @@ function fnTab() {
         activateTab(initialIndex > -1 ? initialIndex : 0, false);
     });
 }
-
 
 // 버튼 아이콘 확인
 function fnShowBtn() {
@@ -203,71 +203,221 @@ function fnSwiper() {
     });
 }
 
-// 팝업
+// 모달(레이어) 팝업
 function fnModal() {
-    var openButton = document.getElementById('openModal');
-    var modal = document.getElementById('modalSample');
-    var modalDialog = modal.querySelector('.modal__dialog');
-    var closeButtons = modal.querySelectorAll('[data-modal-close]');
+    var openButton = document.getElementById('openModal'); // id 찾아서 모달 열기
+    var modal = document.getElementById('modalSample'); // modalSample 모달 요소 찾기
 
+    // 필요한 요소가 없으면 함수 종료
+    if (!openButton || !modal) {
+        return;
+    }
+
+    var modalDialog = modal.querySelector('.modal__dialog');    // 실제 모달 콘텐츠 영역
+    var closeButtons = modal.querySelectorAll('[data-modal-close]');    // 모달 닫기 버튼 
+
+    // 다이얼로그가 없으면 종료
+    if (!modalDialog) {
+        return;
+    }
+
+    // 모달이 열리기 전, 마지막으로 포커스가 있던 요소를 저장할 변수
     let lastFocusedElement = null;
 
+    /**
+     * 모달 안에서 포커스 가능한 요소들을 찾는 함수
+     * 
+     * 대상:
+     * - 링크(a)
+     * - 버튼(button)
+     * - textarea
+     * - input
+     * - select
+     * - tabindex가 -1이 아닌 요소
+     * 
+     * 접근성에서 필요한 이유:
+     * 모달이 열려 있을 때 Tab 키로 이동 가능한 요소를 제한하기 위해 사용
+     */
     function getFocusableElements(container) {
-      return container.querySelectorAll(
-        'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
-      );
+        return container.querySelectorAll(
+            'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
     }
 
+    // 모달 열기 함수
     function openModal() {
-      lastFocusedElement = document.activeElement;
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      modalDialog.focus();
-      document.addEventListener('keydown', handleKeydown);
+        lastFocusedElement = document.activeElement;    // 현재 포커스된 요소 저장
+        modal.classList.add('is-open');     // 모달 열기 클래스
+        modal.setAttribute('aria-hidden', 'false');     // 스크린리더에 모달이 현재 열려 있음을 전달 - aria-hidden 값을 false로 변경
+        document.body.style.overflow = 'hidden';    // 모달이 열리면 body 스크롤 막기
+        modalDialog.focus();    // 모달 다이얼로그 영역으로 포커스 이동
+        document.addEventListener('keydown', handleKeydown);    // ESC / Tab 제어를 위한 keydown 이벤트 
     }
 
+    // 모달 닫기 함수
     function closeModal() {
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', handleKeydown);
-
-      if (lastFocusedElement) {
-        lastFocusedElement.focus();
-      }
+        modal.classList.remove('is-open');  // 모달 닫기 클래스
+        modal.setAttribute('aria-hidden', 'true');  // 스크린리더에 모달이 닫혔음을 전달
+        document.body.style.overflow = '';  // body 스크롤 원상복구
+        document.removeEventListener('keydown', handleKeydown); // 모달이 닫혔으므로 키보드 이벤트 해제
+        
+        // 모달 열기 전 포커스가 있던 요소로 복귀
+        if (lastFocusedElement) {
+            lastFocusedElement.focus();
+        }
     }
 
+    // 키보드 제어 함수
     function handleKeydown(e) {
-      if (e.key === 'Escape') {
-        closeModal();
-        return;
-      }
 
-      if (e.key === 'Tab') {
-        const focusableElements = getFocusableElements(modalDialog);
-        const firstElement = focusableElements[0];
-        const lastElement = focusableElements[focusableElements.length - 1];
-
-        if (!focusableElements.length) {
-          e.preventDefault();
-          return;
+        // ESC 키를 누르면 모달 닫기
+        if (e.key === 'Escape') {
+            closeModal();
+            return;
         }
 
-        if (e.shiftKey && document.activeElement === firstElement) {
-          e.preventDefault();
-          lastElement.focus();
-        } else if (!e.shiftKey && document.activeElement === lastElement) {
-          e.preventDefault();
-          firstElement.focus();
+        // Tab 키를 누를 때만 포커스 순환 처리
+        if (e.key === 'Tab') {
+            const focusableElements = getFocusableElements(modalDialog);    // 모달 안에서 포커스 가능한 요소들 찾기
+            const firstElement = focusableElements[0];  // 첫 번째 포커스 요소
+            const lastElement = focusableElements[focusableElements.length - 1];    // 마지막 포커스 요소
+
+            // 포커스 가능한 요소가 하나도 없으면
+            // Tab 이동이 바깥으로 빠지지 않도록 기본 동작 막음
+            if (!focusableElements.length) {
+                e.preventDefault();
+                return;
+            }
+
+            // Shift + Tab 인데 현재 첫 번째 요소에 포커스가 있으면
+            // 마지막 요소로 이동시켜 순환 처리
+            if (e.shiftKey && document.activeElement === firstElement) {
+                e.preventDefault();
+                lastElement.focus();
+
+            // 일반 Tab 인데 현재 마지막 요소에 포커스가 있으면
+            // 첫 번째 요소로 이동시켜 순환 처리
+            } else if (!e.shiftKey && document.activeElement === lastElement) {
+                e.preventDefault();
+                firstElement.focus();
+            }
         }
-      }
     }
 
+    // 열기 버튼 클릭 시 모달 열기
     openButton.addEventListener('click', openModal);
 
-    closeButtons.forEach(button => {
-      button.addEventListener('click', closeModal);
+    // 닫기 버튼이 여러 개일 수 있으므로 각각 클릭 이벤트 연결
+    closeButtons.forEach(function (button) {
+        button.addEventListener('click', closeModal);
+    });
+}
+
+// 배너 클릭 팝업
+function fnBannerPop() {
+    const openButtons = document.querySelectorAll('[data-modal-open]');
+    const modals = document.querySelectorAll('.banner-list__modal');
+
+    let activeModal = null;
+    let activeTrigger = null;
+
+    function getFocusableElements(container) {
+        return container.querySelectorAll(
+            'a[href], area[href], input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [contenteditable], [tabindex]:not([tabindex="-1"])'
+        );
+    }
+
+    function openModal(modal, trigger) {
+        if (!modal) return;
+
+        activeModal = modal;
+        activeTrigger = trigger;
+
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+
+        if (trigger) {
+            trigger.setAttribute('aria-expanded', 'true');
+        }
+
+        const dialog = modal.querySelector('.modal__dialog');
+        if (dialog) {
+            dialog.focus();
+        }
+    }
+
+    function closeModal(modal) {
+        if (!modal) return;
+
+        modal.hidden = true;
+        document.body.style.overflow = '';
+
+        if (activeTrigger) {
+            activeTrigger.setAttribute('aria-expanded', 'false');
+            activeTrigger.focus();
+        }
+
+        activeModal = null;
+        activeTrigger = null;
+    }
+
+    openButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-modal-open');
+            const targetModal = document.getElementById(modalId);
+
+            openModal(targetModal, this);
+        });
+    });
+
+    modals.forEach(function(modal) {
+        const closeTargets = modal.querySelectorAll('[data-modal-close]');
+        const dialog = modal.querySelector('.modal__dialog');
+
+        closeTargets.forEach(function(closeTarget) {
+            closeTarget.addEventListener('click', function(event) {
+                if (event.target === dialog) return;
+                closeModal(modal);
+            });
+        });
+
+        if (dialog) {
+            dialog.addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+        }
+
+        modal.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal(modal);
+                return;
+            }
+
+            if (event.key === 'Tab') {
+                const focusableElements = getFocusableElements(modal);
+                const focusableArray = Array.prototype.slice.call(focusableElements);
+
+                if (focusableArray.length === 0) {
+                    event.preventDefault();
+                    return;
+                }
+
+                const firstElement = focusableArray[0];
+                const lastElement = focusableArray[focusableArray.length - 1];
+
+                if (event.shiftKey) {
+                    if (document.activeElement === firstElement || document.activeElement === dialog) {
+                        event.preventDefault();
+                        lastElement.focus();
+                    }
+                } else {
+                    if (document.activeElement === lastElement) {
+                        event.preventDefault();
+                        firstElement.focus();
+                    }
+                }
+            }
+        });
     });
 }
 
