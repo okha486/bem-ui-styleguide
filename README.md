@@ -9,6 +9,8 @@
 - Navigation
 - Layout
 - Button
+- Popup
+- Banner Popup
 - Form
 - Table
 - Box
