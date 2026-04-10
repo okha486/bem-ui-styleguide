@@ -514,3 +514,57 @@ caption, legend, .sr-only, .hidden, .IR {
 }
 /* 공통 컴포넌트 스타일(E) */
 
+
+
+/*
+** header style 
+***************************************************** */
+.header__inner {
+  display: flex;
+  align-items: center;
+  width: 1180px;
+  margin: 0 auto;
+}
+
+/* sticky */
+.header__body {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+}
+.header__body.is-fixed {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* gnb */
+.header__gnb {
+  height: 45px;
+  border-bottom: 1px solid #efefef;
+}
+.header__gnb-list {
+  display: flex;
+  gap: 20px;
+}
+
+/* lnb */
+.header__lnb-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.header__lnb-btn {
+  flex: 0 0 auto;
+  margin-right: 15px;
+  padding: 8px 16px;
+}
+
+/* full modifier */
+.header__lnb--full .header__inner {
+  width: 100%;
+  padding-top: 50px;
+}
