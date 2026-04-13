@@ -1,53 +1,13 @@
-/* reset */
-* { margin:0; padding:0; box-sizing: border-box;}
-*::before, *::after {
-  box-sizing: border-box;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-ul, ol, dl { margin:0; padding:0; }
-li, dt, dd { list-style: none; }
-html {
-  overflow: hidden;
-  overflow-y: auto;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 16px;
-}
-fieldset {border:0;}
-body {
-  margin: 0;
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
-  color: var(--color-text);
-}
-img { max-width: 100%; height: auto; }
-button {
-  border:0;
-  font-family: inherit;
-  background:none;
-  cursor:pointer;
-}
-button:disabled:hover,
-button:disabled {
-  background-color: light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3));
-  color: light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
-  border-color: light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
-}
-caption, legend, .sr-only, .hidden, .IR {
-  overflow: hidden;
-  position:absolute;
-  width:1px;
-  height:1px;
-  padding:0;
-  margin:-1px;
-  overflow:hidden;
-  clip:rect(0 0 0 0);
-  white-space:nowrap;
-  border:0;
-}
+@charset "UTF-8";
+/* =================================================
+title       : KOFONS
+Create date : 2026-04
+================================================= */
+@import url(./default.css);
 
+/*-------------------------------------------------
+  Base 
+-------------------------------------------------*/
 /* 스킵링크 */
 #skip-nav {
   position: fixed;
@@ -72,40 +32,99 @@ caption, legend, .sr-only, .hidden, .IR {
   text-decoration: none;
 }
 
-/* input err */
-.is-error > input {
-  border:2px solid red;
-}
-.is-error__msg {
-  color: red;
-}
-/* common settiong CSSS */
 
-/*
-** header style 
-***************************************************** */
+/* 타이틀 */
+.title--h1 {
+  font-size: var(--text-heading-xl);
+  font-weight: var(--text-font-weight-bold);
+  line-height: var(--text-line-height-base);
+  letter-spacing: var(--text-letter-spacing-wide);
+}
+.title--h2 {
+  font-size: var(--text-heading-lg);
+  font-weight: var(--text-font-weight-bold);
+  line-height: var(--text-line-height-base);
+  letter-spacing: var(--text-letter-spacing-wide);
+}
+.title--h3 {
+  font-size: var(--text-heading-md);
+  font-weight: var(--text-font-weight-bold);
+  line-height: var(--text-line-height-base);
+  letter-spacing: var(--text-letter-spacing-wide);
+}
+.title--h4 {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--text-font-weight-bold);
+  line-height: var(--text-line-height-base);
+  letter-spacing: var(--text-letter-spacing-wide);
+}
+.title--h5 {
+  font-size: var(--text-heading-sx);
+  font-weight: var(--text-font-weight-bold);
+  line-height: var(--text-line-height-base);
+  letter-spacing: var(--text-letter-spacing-wide);
+}
+.title--h5::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #0066B3;
+  position: absolute;
+  left: 0;
+  top: 7px;
+}
+
+/* 텍스트 */
+.text {
+  font-weight: var(--text-font-weight-regular);
+  line-height: var(--text-line-height-base);
+  letter-spacing: var(--text-letter-spacing-base);
+  color: inherit;
+  word-break: keep-all;
+}
+.text--xxl {font-size: var(--text-xxl);}
+.text--xl {font-size: var(--text-xl);}
+.text--lg {font-size: var(--text-lg);}
+.text--md {font-size: var(--text-md);}
+.text--sm {font-size: var(--text-sm);}
+.text--xs {font-size: var(--text-xs);}
+
+.text--left { text-align: left;}
+.text--center { text-align: center;}
+.text--right { text-align: right;}
+.text--underline {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.text--ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.help-text{
+  display:flex;
+  align-items:center;
+  gap:3px;
+  font-size:16px;
+  line-height:1.5;
+}
+.help-text__icon::before {
+  content: "\ee59";
+  font-family: "remixicon";
+  color: #F44A4A;
+  font-weight: 300;
+}
+
+
+/* gnb */
 .header__inner {
   display: flex;
   align-items: center;
   width: 1180px;
   margin: 0 auto;
 }
-
-/* sticky */
-.header__body {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #fff;
-}
-.header__body.is-fixed {
-  position: fixed;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* gnb */
 .header__gnb {
   height: 45px;
   border-bottom: 1px solid #efefef;
@@ -134,91 +153,6 @@ caption, legend, .sr-only, .hidden, .IR {
   padding-top: 50px;
 }
 
-/*
-** content style 
-***************************************************** */
-
-/* 포커스 표시(중요) */
-/* 키보드 포커스: outline 제거하지 말고, 더 선명하게 */
-.input:focus-visible,
-.btn:focus-visible{
-  outline:3px solid #111;   /* 배경색에 맞게 조정 가능 */
-  outline-offset:2px;
-}
-
-
-/* =========================
-  텍스트 타이틀
-========================= */
-
-/* Form Label */
-.form-label {
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 700;
-}
-/* 상태 (필수) */
-.form-label--required {}
-
-/* 요소 */
-.form-label__required-mark {
-  color: #d32f2f;
-  margin-left: 2px;
-}
-
-/* 타이틀 */
-.title {}
-.title--h2 {}
-.title--h3 {
-  font-size: 22px;
-  line-height: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-.title--h4 {
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  position: relative;
-  padding-left: 13px;
-}
-.title--h4::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #0066B3;
-  position: absolute;
-  left: 0;
-  top: 7px;
-}
-
-/* 텍스트 */
-.text {font-size: 16px;line-height: 1.6;}
-.text--xl { font-size: 24px !important; }
-.text--lg { font-size: 18px !important; }
-.text--md { font-size: 17px !important; }
-.text--sm { font-size: 14px !important; }
-.text--xs { font-size: 12px !important; }
-
-.text__underline {
-  text-decoration: underline;
-}
-
-.help-text{
-  display:flex;
-  align-items:center;
-  gap:3px;
-  font-size:16px;
-  line-height:1.5;
-}
-.help-text__icon::before {
-  content: "\ee59";
-  font-family: "remixicon";
-  color: #F44A4A;
-  font-weight: 300;
-}
 
 /* List */
 .list {
@@ -271,6 +205,21 @@ caption, legend, .sr-only, .hidden, .IR {
 /* =========================
   Form
 ========================= */
+
+/* Form Label */
+.form-label {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+}
+/* 상태 (필수) */
+.form-label--required {}
+
+/* 요소 */
+.form-label__required-mark {
+  color: #d32f2f;
+  margin-left: 2px;
+}
 
 /* Form Group */
 .form-group {
@@ -915,13 +864,13 @@ caption, legend, .sr-only, .hidden, .IR {
 }
 
 /* breadcrumb */
-.breadcrumb {}
-.breadcrumb ol {
+.breadcrumb-wrap {}
+.breadcrumb-wrap ol {
   display: flex;
   gap: 7px;
 }
-.breadcrumb ol li {}
-.breadcrumb ol li::after {
+.breadcrumb-wrap ol li {}
+.breadcrumb-wrap ol li::after {
   content: "\ea6e";
   font-family: "remixicon";
   color: #C5C5C5;
@@ -1862,7 +1811,7 @@ caption, legend, .sr-only, .hidden, .IR {
 }
 
 /* 
-* 반응형
+* 반응형 Responsive 
 ********************************************* */
 /* 모바일 768이하 */
 @media (max-width:768px){
