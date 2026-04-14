@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>BEM UI Style Guide</title>
+  <meta
+    name="description"
+    content="BEM 방식과 웹접근성을 기준으로 정리한 실무형 UI 스타일가이드입니다."
+  >
+
+  <link rel="stylesheet" href="./js/swiper/css/swiper-bundle.min.css">
+
+  <!-- 가이드 스타일 : SyntaxHighlighter 템플릿 스타일 -->
+  <link rel="stylesheet" href="./css/styleCore.css">
+  <link rel="stylesheet" href="./css/styleguide.css"> 
+
+  <!-- 컴포넌트 style -->
+  <link rel="stylesheet" href="./css/component.css">
+
+  <!-- 라이브러리 -->
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/jquery-ui.js"></script>
+  <script src="./js/swiper/js/swiper-bundle.js"></script>
+  <script src="./js/swiper/js/swiper-bundle.min.js"></script>
+
+  <!-- 가이드 레이아웃 : SyntaxHighlighter 템플릿 스크립트 -->
+  <script src="./js/styleCore.js"></script>
+  <script src="./js/shBrushXml.js"></script>
+  <script src="./js/guidLayout.js"></script>
+
+  <!-- 사용 컨텐츠 스크립트 참고 파일(사용파일) -->
+  <script src="./js/styleguide.js"></script>
+
+</head>
+<body>
+  <a href="#guide-content" class="guide__skip">본문 바로가기</a>
+
+  <div class="guide">
+    <header class="guide__header">
+      <div class="guide__header-inner">
+        <p class="guide__eyebrow">Publishing System</p>
+        <h1 class="guide__title">BEM UI Style Guide</h1>
+        <p class="guide__intro">
+          BEM 방식과 웹접근성 기준을 바탕으로 정리한 실무형 UI 스타일가이드입니다.
+          재사용 가능한 컴포넌트 구조, 네이밍 규칙, 마크업 기준을 한 곳에서 확인할 수 있습니다.
+        </p>
+      </div>
+    </header>
+
+    <main id="guide-content" class="guide__content">
+      <section class="guide__section guide__section--highlight" aria-labelledby="guide-overview-title">
+        <div class="guide-overview">
+          <h2 id="guide-overview-title" class="guide-overview__title">가이드 개요</h2>
+          <ul class="guide-overview__list">
+            <li class="guide-overview__item">
+              <strong class="guide-overview__heading">구조화</strong>
+              <p class="guide-overview__text">컴포넌트 단위로 UI를 분리해 재사용성과 유지보수성을 높입니다.</p>
+            </li>
+            <li class="guide-overview__item">
+              <strong class="guide-overview__heading">BEM 네이밍</strong>
+              <p class="guide-overview__text">Block, Element, Modifier 규칙으로 일관된 클래스 체계를 관리합니다.</p>
+            </li>
+            <li class="guide-overview__item">
+              <strong class="guide-overview__heading">웹접근성</strong>
+              <p class="guide-overview__text">시맨틱 구조, 키보드 사용성, 대체텍스트, 레이블 연결을 고려합니다.</p>
+            </li>
+            <li class="guide-overview__item">
+              <strong class="guide-overview__heading">실무 활용</strong>
+              <p class="guide-overview__text">퍼블리싱 실무에서 바로 적용할 수 있도록 예시와 규칙을 함께 제공합니다.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="guide__section guide__section--highlight" aria-labelledby="guide-overview-title">
+        <div class="guide-overview">
+          <h2 id="guide-overview-title" class="guide-overview__title">마크업</h2>
+
+          <div class="guide-rules__group">
+            <div style="border: 1px solid #ddd; padding:10px;">
+              <h3>#wrap</h3>
+              <div style="border:1px solid #ddd; padding:10px; margin:10px;">
+                  <h3>.header <a href="./header.html" target="_blank">이동</a> </h3>
+                  <ul style="margin-left:15px;">
+                      <li>.header__top > .header__inner > .header__logo </li>
+                      <li>.header__body > .header__inner > .header__gnb-list </li>
+                      <li>.header__bottom > .header__inner </li>
+                      <li>.header__lnb > .header__inner </li>
+                      <li>.header__gnb / top_menu </li>
+                  </ul>
+              </div>
+              <div style="border:1px solid #ddd; padding:10px; margin:10px;">
+                  <h3>main#container</h3>
+                  <ul style="margin-left:15px;">
+                      <li>.content </li>
+                      <li>.slide-visual </li>
+                  </ul>
+              </div>
+              <div style="border:1px solid #ddd; padding:10px; margin:10px;">
+                  <h3>.footer</h3>
+                  <ul style="margin-left:15px;">
+                      <li>.footer > .footer__inner</li>
+                      <li>.footer__top > .footer__inner </li>
+                      <li>.footer__bottom > .footer__inner </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="guide__section" aria-labelledby="guide-rules-title">
+        <div class="guide-rules">
+          <h2 id="guide-rules-title" class="guide-rules__title">기본 규칙</h2>
+
+          <div class="guide-rules__group">
+            <h3 class="guide-rules__heading">BEM 표기법</h3>
+            <ul class="guide-rules__list">
+              <li class="guide-rules__item"><code class="guide-rules__code">.block</code> : 독립적으로 사용할 수 있는 컴포넌트</li>
+              <li class="guide-rules__item"><code class="guide-rules__code">.block__element</code> : block 내부를 구성하는 요소</li>
+              <li class="guide-rules__item"><code class="guide-rules__code">.block--modifier</code> : block의 상태 또는 변형</li>
+              <li class="guide-rules__item"><code class="guide-rules__code">.block__element--modifier</code> : element의 상태 또는 변형</li>
+            </ul>
+          </div>
+
+          <div class="guide-rules__group">
+            <h3 class="guide-rules__heading">웹접근성 기준</h3>
+            <ul class="guide-rules__list">
+              <li class="guide-rules__item">링크와 버튼은 목적이 명확한 텍스트를 제공합니다.</li>
+              <li class="guide-rules__item">입력 요소는 label과 연결하고, 필요한 안내 문구를 함께 제공합니다.</li>
+              <li class="guide-rules__item">키보드만으로도 이동과 조작이 가능해야 합니다.</li>
+              <li class="guide-rules__item">아이콘 단독 버튼에는 대체 가능한 이름을 제공합니다.</li>
+            </ul>
+          </div>
+
+          <div class="guide-rules__group">
+            <h3 class="guide-rules__heading">문서 구성 원칙</h3>
+            <ul class="guide-rules__list">
+              <li class="guide-rules__item">각 컴포넌트 문서는 제목, 설명, 예시, 상태, 접근성 유의사항 순서로 정리합니다.</li>
+              <li class="guide-rules__item">공통 스타일은 중복 선언하지 않고 재사용 가능한 구조로 관리합니다.</li>
+              <li class="guide-rules__item">시각 표현보다 의미 구조와 사용 규칙을 우선합니다.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide__section" aria-labelledby="guide-process-title">
+        <div class="guide-step">
+          <h2 id="guide-process-title" class="guide-step__title">제작 프로세스</h2>
+          <ol class="guide-step__list">
+            <li class="guide-step__item guide-step__item--done">
+              <span class="guide-step__circle" aria-hidden="true">1</span>
+              <span class="guide-step__label">컴포넌트 정의</span>
+            </li>
+            <li class="guide-step__item guide-step__item--done">
+              <span class="guide-step__circle" aria-hidden="true">2</span>
+              <span class="guide-step__label">BEM 클래스 설계</span>
+            </li>
+            <li class="guide-step__item guide-step__item--active" aria-current="step">
+              <span class="guide-step__circle" aria-hidden="true">3</span>
+              <span class="guide-step__label">접근성 기준 반영</span>
+            </li>
+            <li class="guide-step__item">
+              <span class="guide-step__circle" aria-hidden="true">4</span>
+              <span class="guide-step__label">UI 검수 및 문서화</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="guide__section" aria-labelledby="guide-components-title">
+        <div class="guide-components">
+          <div class="guide-components__header">
+            <h2 id="guide-components-title" class="guide-components__title">컴포넌트 목록</h2>
+            <p class="guide-components__desc">
+              각 컴포넌트 페이지에서 구조, 예시, 상태, 접근성 기준을 확인할 수 있습니다.
+            </p>
+          </div>
+
+          <ul class="guide-components__list">
+            <li class="guide-components__item">
+              <a href="./components/typography.html" class="guide-card">
+                <strong class="guide-card__title">Typography</strong>
+                <p class="guide-card__text">텍스트 스타일, 제목, 본문, 강조 요소 기준</p>
+              </a>
+            </li>
+            <li class="guide-components__item">
+              <a href="./components/navigation.html" class="guide-card">
+                <strong class="guide-card__title">Navigation</strong>
+                <p class="guide-card__text">Skip Link, Breadcrumb, Step, 진행상태</p>
+              </a>
+            </li>
+            <li class="guide-components__item">
+              <a href="./components/layout.html" class="guide-card">
+                <strong class="guide-card__title">Layout</strong>
+                <p class="guide-card__text">뱃지, 모달팝업, 아코디언, 슬라이드, 이미지 등 레이아웃 기본 구조</p>
+              </a>
+            </li>
+            <li class="guide-components__item">
+              <a href="./components/button.html" class="guide-card">
+                <strong class="guide-card__title">Button</strong>
+                <p class="guide-card__text">기본 버튼, 링크버튼, 아이콘 버튼, 정렬, 상태 예시</p>
+              </a>
+            </li>
+            <li class="guide-components__item">
+              <a href="./components/popup.html" class="guide-card">
+                <strong class="guide-card__title">Popup</strong>
+                <p class="guide-card__text"> 기본 모달, 메인 공지팝업 예시</p>
+              </a>
+            </li>
+            <li class="guide-components__item">
+              <a href="./components/eventPopup.html" class="guide-card">
+                <strong class="guide-card__title">Banner Popup</strong>
+                <p class="guide-card__text"> 배너 이벤트 팝업 예시</p>
+              </a>
+            </li>
+            <li class="guide-components__item">
+              <a href="./components/form.html" class="guide-card">
+                <strong class="guide-card__title">Form</strong>
+                <p class="guide-card__text">입력 요소, 선택 요소, 파일, 날짜, 주소, 이메일 폼</p>
+              </a>
+            </li>
+            <li class="guide-components__item">
+              <a href="./components/table.html" class="guide-card">
+                <strong class="guide-card__title">Table</strong>
+                <p class="guide-card__text">데이터 테이블 구조와 캡션, 헤더, 정렬 기준</p>
+              </a>
+            </li>
+            <li class="guide-components__item">
+              <a href="./components/tab.html" class="guide-card">
+                <strong class="guide-card__title">Tab</strong>
+                <p class="guide-card__text">탭 구조와 선택 상태, 키보드 접근 예시</p>
+              </a>
+            </li>
+            <li class="guide-components__item">
+              <a href="./components/list.html" class="guide-card">
+                <strong class="guide-card__title">List</strong>
+                <p class="guide-card__text">블릿, 썸네일, 리스트형 UI</p>
+              </a>
+            </li>
+            <li class="guide-components__item">
+              <a href="./components/box.html" class="guide-card">
+                <strong class="guide-card__title">Box</strong>
+                <p class="guide-card__text">박스형 UI, 검색영역</p>
+              </a>
+            </li>
+            <li class="guide-components__item">
+              <a href="./components/etc.html" class="guide-card">
+                <strong class="guide-card__title">Etc</strong>
+                <p class="guide-card__text">기타 공통 UI와 보조 패턴 정리</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="guide__section" aria-labelledby="guide-reference-title">
+        <div class="guide-reference">
+          <h2 id="guide-reference-title" class="guide-reference__title">참고 사항</h2>
+          <dl class="guide-reference__list">
+            <div class="guide-reference__item">
+              <dt class="guide-reference__term">권장 대상</dt>
+              <dd class="guide-reference__desc">웹 퍼블리셔, 프론트엔드 협업 환경, 공공기관 및 접근성 대응 프로젝트</dd>
+            </div>
+            <div class="guide-reference__item">
+              <dt class="guide-reference__term">문서 목적</dt>
+              <dd class="guide-reference__desc">UI 예제 나열이 아닌, 재사용 가능한 구조와 규칙을 제공하는 실무형 가이드</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <button type="button" class="btn_top"><i class="ri-arrow-up-line"></i> <br> 위로</button>
+    </main>
+
+    <footer class="guide__footer">
+      <p class="guide__footer-text">BEM UI Style Guide · Publishing System Documentation</p>
+    </footer>
+  </div>
+</body>
+</html>
