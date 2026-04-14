@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼</title>
+
+    <link rel="stylesheet" href="../font/RemixIcon_Fonts_v4.9.1/remixicon.css">
+    <link rel="stylesheet" href="../font/webfonts_Pretendard.css">
+    <link rel="stylesheet" href="../js/swiper/css/swiper-bundle.min.css">
+
+    <!-- 가이드 레이아웃 : SyntaxHighlighter 템플릿 스타일 -->
+    <link rel="stylesheet" href="../css/styleCore.css">
+    <link rel="stylesheet" href="../css/shThemeEclipse.css">
+
+    <!-- 사용 컨텐츠 스타일 참고 파일(사용파일) -->
+    <link rel="stylesheet" href="../css/styleguide.css">
+    <link rel="stylesheet" href="../css/component.css">
+
+    <!-- 라이브러리 -->
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/swiper/js/swiper-bundle.js"></script>
+    <script src="../js/swiper/js/swiper-bundle.min.js"></script>
+
+    <!-- 가이드 레이아웃 : SyntaxHighlighter 템플릿 스크립트 -->
+    <script src="../js/styleCore.js"></script>
+    <script src="../js/shBrushXml.js"></script>
+    <script src="../js/guidLayout.js"></script>
+
+    <!-- 사용 컨텐츠 스크립트 참고 파일(사용파일) -->
+    <script src="../js/styleguide.js"></script>
+</head>
+<body>
+<div id="styleguide" class="component-page">
+    <a href="#component-content" class="component-page__skip">본문 바로가기</a>
+
+    <header class="component-page__header">
+      <div class="component-page__header-inner">
+        <p class="component-page__eyebrow">Component Guide</p>
+        <h1 class="component-page__title">Button</h1>
+        <p class="component-page__intro">
+          Button 컴포넌트의 기본 구조, 상태, 변형을 정리한 문서입니다.
+        </p>
+      </div>
+    </header>
+
+    <main class="component-page__content">
+
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>크기</h2>
+                <div class="item"> 
+                    
+                    <div class="button-group" role="group" aria-label="버튼그룹">
+                        <button type="button" class="button button--xs">button--xs</button>
+                        <button type="button" class="button button--sm">button--sm</button>
+                        <button type="button" class="button button--md">button--md</button>
+                        <button type="button" class="button button--lg">button--lg</button>
+                    </div>
+
+                </div>
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>계층</h2>
+                <div class="item"> 
+                    
+                    <div class="button-group" role="group">
+                        <button type="button" class="button button--primary">primary</button>
+                        <button type="button" class="button button--secondary">secondary</button>
+                        <button type="button" class="button button--line">line</button>
+                        <button type="button" class="button" onclick="alert('Hello World!')"  disabled>disabled</button>
+                    </div>
+
+                </div>
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>버튼 정렬</h2>
+                <div class="item"> 
+                    
+                    <div class="button-group button-group--start" role="group">
+                        <button type="button" class="button">목록</button>
+                        <button type="button" class="button">등록</button>
+                        <button type="button" class="button">수정</button>
+                    </div>
+
+                    <br>
+
+                    <div class="button-group button-group--center" role="group">
+                        <button type="button" class="button">등록</button>
+                        <button type="button" class="button">수정</button>
+                        <button type="button" class="button">삭제</button>
+                    </div>
+
+                    <br>
+
+                    <div class="button-group button-group--end" role="group">
+                        <a class="button" href="/list">목록</a>
+                        <a class="button" href="/write">등록</a>
+                        <button type="button" class="button">수정</button>
+                    </div>
+
+                    <br>
+                    
+                    <div class="button-group button-group--between" role="group">
+                        <div class="button-group__left">
+                            <a class="button" href="/list">목록</a>
+                        </div>
+                        <div class="button-group__right">
+                            <a class="button" href="/write">등록</a>
+                            <button type="button" class="button">수정</button>
+                        </div>
+                    </div>
+
+                </div>
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>텍스트 - Link </h2>
+                <div class="item"> 
+                    
+                    <a href="#" class="button button--txt underline">
+                        <strong class="text--lg">링크 강조</strong>
+                    </a>
+                    <a href="#" class="button button--txt underline" target="_blank" title="새 창 열림">
+                        바로가기 
+                        <i class="ri-chat-new-line"></i>
+                    </a>
+                    <a href="#" class="button button--txt underline">
+                        자세히 보기
+                        <i class="ri-arrow-right-long-line"></i>
+                    </a>
+
+                </div>
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>이미지/아이콘</h2>
+                <div class="item"> 
+                    
+                    <div class="button-group" role="group" aria-label="버튼그룹">
+                        <button type="button" class="button">
+                            <span>작성하기</span>
+                            <span class="button--icon button__icon--pen" aria-hidden="true"></span>
+                        </button>
+
+                        <button type="button" class="button">
+                            <span>작성하기</span>
+                            <i class="button--icon ri-edit-2-line" aria-hidden="true"></i>
+                        </button>
+
+                        <button type="button" class="button">
+                            <span>작성하기</span>
+                            <i class="button--icon ri-search-ai-3-line" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>아이콘</h2>
+                <div class="item"> 
+                    
+                    <!-- 버튼 아이콘 -->
+                    <button class="button button--icon">
+                        <span class="icon icon--left" aria-hidden="true">
+                            <i class="ri-close-fill"></i>
+                        </span>
+                        <span class="sr-only">삭제</span>
+                    </button>
+                    
+                    <button class="button button--icon">
+                        <span class="icon icon--left" aria-hidden="true">
+                            <i class="ri-mail-line"></i>
+                        </span>
+                        <span class="sr-only">이메일</span>
+                    </button>
+
+                    <button type="button" class="button button--arrow js-toggle" data-target="neq_certi_a_01">
+                        <span class="sr-only">내용 보기</span>
+                    </button>
+
+                    <br><br>
+
+                    <!-- 텍스트 포함 아이콘 -->
+                    <span class="icon">
+                        <span class="icon__image" aria-hidden="true">
+                            <i class="ri-mail-line"></i>
+                        </span>
+                        <span class="icon__text">메일</span>
+                    </span>
+
+                    <br><br>
+
+                    <!-- 시스템 아이콘 크기는 텍스트 사이즈로 작업 -->
+                    <span class="icon text--xl" aria-hidden="true">
+                        <i class="ri-share-line"></i>
+                    </span>
+                    
+                    <span class="icon text--xl" aria-hidden="true">
+                        <i class="ri-search-line"></i>
+                    </span>
+                    
+                    <span class="icon text--xl" aria-hidden="true">
+                        <i class="ri-download-2-line"></i>
+                    </span>
+
+                    <span class="icon text--xl" aria-hidden="true">
+                        <i class="ri-printer-line"></i>
+                    </span>
+
+                </div>
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section id="component-accessibility" class="component-doc" aria-labelledby="component-accessibility-title">
+            <div class="component-doc__section">
+            <h2 id="component-accessibility-title" class="component-doc__title">접근성 유의사항</h2>
+
+            <dl class="component-doc__note-list">
+                <div class="component-doc__note-item">
+                    <dt class="component-doc__note-term">모든 버튼은 키보드로 접근하고 조작할 수 있도록 한다.</dt>
+                    <dd class="component-doc__note-desc">비활성화, 사용불가 상태인 경우를 제외하고 모든 버튼은 키보드로 접근하고 조작할 수 있도록 해야 한다</dd>
+                </div>
+                <div class="component-doc__note-item">
+                    <dt class="component-doc__note-term">버튼의 키보드 초점이 명확하게 표시되도록 한다.</dt>
+                    <dd class="component-doc__note-desc">
+                        모든 버튼은 초점을 받은 상태가 시각적으로 명확하게 구분되어야 한다. <br>
+                        가능한 한 포커스링의 스타일은 사용자 에이전트에서 제공하는 기본 스타일을 유지한다. <br>
+                        만약 포커스링 스타일에 변경이 필요하다면 모든 유형의 버튼에서 포커스링이 가려지지 않고 
+                        명확하게 표시되며 인접 배경과 3:1 이상의 명도 대비를 갖는지 확인해야 한다.
+                    </dd>
+                </div>
+                <div class="component-doc__note-item">
+                    <dt class="component-doc__note-term">버튼으로 작동하는 모든 요소는 스크린 리더에서 버튼으로 인지될 수 있도록 한다.</dt>
+                    <dd class="component-doc__note-desc">[button]대신 불가피하게 다른 태그를 사용해야 하는 경우 role="button"을 사용하여 스크린 리더에서 요소의 역할이 버튼으로 인식될 수 있도록 해야 한다.</dd>
+                </div>
+                <div class="component-doc__note-item">
+                    <dt class="component-doc__note-term">버튼을 적절한 크기로 제공한다.</dt>
+                    <dd class="component-doc__note-desc">
+                        클릭, 터치 영역을 정교하게 조작하기 어려운 사용자를 고려하여, 마우스 상호작용에 대해서는 17px * 17px,
+                        터치 상호작용에 대해서는 44px * 44px 이상의 영역에서 반응할 수 있는 컨트롤 크기를 사용할 것을 권장한다
+                    </dd>
+                </div>
+            </dl>
+            </div>
+        </section>
+
+    </main>
+    <footer class="component-page__footer">
+      <a href="../index.html" class="component-page__back-link">목록으로 돌아가기</a>
+    </footer>
+</div>
+</body>
+</html>
