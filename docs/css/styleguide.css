@@ -1,0 +1,500 @@
+
+/* index.html 필수 CSS(S) */
+.guide {
+  min-width: 320px;
+  color: #111;
+  background: #fff;
+}
+.guide__skip {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px 12px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+.guide__skip:focus {top: 0;z-index: 1000;}
+.guide__header {
+  padding: 48px 24px 32px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+.guide__header-inner,
+.guide__content,
+.guide__footer {max-width: 1200px;margin: 0 auto;}
+.guide__eyebrow {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.guide__title {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.2;
+}
+.guide__intro {
+  max-width: 800px;
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+.guide__content {padding: 40px 24px 80px;}
+.guide__section + .guide__section {margin-top: 48px;}
+.guide__section--highlight {margin-top: 0;}
+.guide-overview__title,
+.guide-rules__title,
+.guide-step__title,
+.guide-components__title,
+.guide-reference__title {
+  margin: 0 0 20px;
+  font-size: 28px;
+  line-height: 1.3;
+}
+.guide-overview__list,
+.guide-components__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.guide-overview__item,
+.guide-rules__group,
+.guide-reference__item,
+.guide-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #fff;
+}
+.guide-overview__item {
+  padding: 20px;
+}
+.guide-overview__heading {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+.guide-overview__text {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+}
+.guide-rules__group {padding: 24px;}
+.guide-rules__group + .guide-rules__group {margin-top: 16px;}
+.guide-rules__heading {margin: 0 0 12px;font-size: 20px;}
+.guide-rules__list {margin: 0;padding-left: 20px;}
+.guide-rules__item + .guide-rules__item {margin-top: 8px;}
+.guide-step__list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.guide-step__list::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #d9d9d9;
+}
+.guide-step__item {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  text-align: center;
+}
+.guide-step__circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: #d9d9d9;
+  font-weight: 700;
+}
+.guide-step__label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.guide-step__item--done .guide-step__circle,
+.guide-step__item--active .guide-step__circle {
+  background: #49b649;
+  color: #fff;
+}
+.guide-components__header {
+  margin-bottom: 20px;
+}
+.guide-components__desc {
+  margin: 8px 0 0;
+  color: #555;
+  line-height: 1.6;
+}
+.guide-card {
+  display: block;
+  height: 100%;
+  padding: 20px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.guide-card:hover,
+.guide-card:focus {
+  border-color: #111;
+  transform: translateY(-2px);
+}
+.guide-card__title {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+.guide-card__text {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+}
+.guide-reference__list {margin: 0;}
+.guide-reference__item {padding: 20px;}
+.guide-reference__item + .guide-reference__item {margin-top: 12px;}
+.guide-reference__term {font-weight: 700;}
+.guide-reference__desc {
+  margin: 8px 0 0;
+  color: #555;
+  line-height: 1.6;
+}
+.guide__footer {padding: 24px;border-top: 1px solid #e5e7eb;}
+.guide__footer-text {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+.guide__content .btn_top {
+  font-size: 19.2px;
+  overflow: hidden;
+  position: fixed;
+  left: 250px;
+  bottom: 0;
+  width: 80px;
+  height: 80px;
+  padding-bottom: 8px;
+  background-color: #ddd;
+  color: #666;
+  text-align: center;
+  line-height: 1.2;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.guide__content .btn_top:hover, #styleguide .btn_top:focus {
+  background-color: #aaa;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .guide__title {font-size: 32px;}
+  .guide-overview__list,
+  .guide-components__list {grid-template-columns: 1fr;}
+  .guide-step__list {gap: 16px;flex-wrap: wrap;}
+  .guide-step__list::before {display: none;}
+  .guide-step__item {flex: none;width: calc(50% - 8px);}
+}
+/* index.html 필수 CSS(E) */
+
+
+/* 공통 컴포넌트 스타일(S) */
+.component-page {
+  min-width: 320px;
+  color: #111;
+  background: #fff;
+}
+.component-page__skip {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px 12px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+}
+.component-page__skip:focus {
+  top: 0;
+  z-index: 1000;
+}
+.component-page__header {
+  padding: 40px 24px 32px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+.component-page__header-inner,
+.component-page__content,
+.component-page__footer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.component-page__eyebrow {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+.component-page__title {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.2;
+}
+.component-page__intro {
+  max-width: 800px;
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+.component-page__content {
+  padding: 40px 24px 80px;
+}
+.component-page__nav {
+  margin-bottom: 32px;
+}
+.component-page__nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.component-page__nav-link {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  color: #111;
+  text-decoration: none;
+  background: #fff;
+}
+.component-page__nav-link:hover,
+.component-page__nav-link:focus {
+  border-color: #111;
+}
+.component-doc + .component-doc {
+  margin-top: 32px;
+}
+.component-doc__title {
+  margin: 0 0 16px;
+  font-size: 26px;
+  line-height: 1.3;
+}
+.component-doc__heading {
+  margin: 0 0 12px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+.component-doc__text {
+  margin: 0;
+  color: #555;
+  line-height: 1.7;
+}
+.component-doc__group {
+  position: relative;
+  margin: 48px 0 0 0;
+}
+.component-doc__group > h2 {
+  font-size: 25px;
+  display: block;
+  margin: 48px 0 32px;
+  color: #222;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+}
+.component-doc__group > h2:first-child {margin-top: 0;}
+.component-doc__group > textarea {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+}
+.component-doc__group > button {
+  position: absolute;
+  right: 0;
+  top: auto;
+  z-index: 1;
+  margin-top: 25.6px;
+  padding: 8px 24px;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  background-color: #ddd;
+}
+.component-doc__group + .component-doc__group {margin-top: 24px;}
+.component-doc__example {display: grid;gap: 16px;}
+.component-doc__preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #fafafa;
+}
+.component-doc__code {overflow-x: auto;}
+.component-doc__pre {
+  margin: 0;
+  padding: 20px;
+  border-radius: 16px;
+  background: #111827;
+  color: #f9fafb;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+.component-doc__list {
+  margin: 0;
+  padding-left: 20px;
+}
+.component-doc__item {
+  line-height: 1.7;
+  color: #444;
+}
+.component-doc__item + .component-doc__item {margin-top: 8px;}
+.component-doc__inline-code {
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: #f3f4f6;
+  font-family: monospace;
+  font-size: 0.95em;
+}
+.component-doc__note-list {margin: 0;}
+.component-doc__note-item {
+  padding: 16px 0;
+  border-top: 1px solid #e5e7eb;
+}
+.component-doc__note-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.component-doc__note-term {font-weight: 700;}
+.component-doc__note-desc {
+  margin: 8px 0 0;
+  color: #555;
+  line-height: 1.7;
+}
+.component-page__footer {
+  padding: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+.component-page__back-link {
+  display: inline-block;
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+}
+.component-page__back-link:hover,
+.component-page__back-link:focus {
+  text-decoration: underline;
+}
+.component-page main > section > article > pre {
+  border: 1px solid #ddd;
+  padding: 0;
+}
+.component-page .syntaxhighlighter {
+  overflow: hidden !important;
+  overflow-x: auto !important;
+  padding: 16px;
+  border: 1px solid #efefef;
+  background-color: white !important;
+  width: 100% !important;
+  margin: 16px 0 16px 0 !important;
+  position: relative !important;
+  overflow: auto !important;
+  font-size: 14px !important;
+}
+.component-page .syntaxhighlighter code {
+  font-size: 19.2px !important;
+}
+.component-page .syntaxhighlighter .toolbar {
+  display: none;
+}
+.component-page .syntaxhighlighter .line.alt2 {
+  background-color: #f8f8f8 !important;
+}
+.component-page .syntaxhighlighter .keyword {
+  font-weight: normal !important;
+}
+
+
+@media (max-width: 768px) {
+  .component-page__title {
+    font-size: 30px;
+  }
+  .component-doc__section {
+    padding: 20px;
+  }
+  .component-doc__title {
+    font-size: 22px;
+  }
+}
+/* 공통 컴포넌트 스타일(E) */
+
+
+
+/*
+** header style 
+***************************************************** */
+.header__inner {
+  display: flex;
+  align-items: center;
+  width: 1180px;
+  margin: 0 auto;
+}
+
+/* sticky */
+.header__body {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+}
+.header__body.is-fixed {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* gnb */
+.header__gnb {
+  height: 45px;
+  border-bottom: 1px solid #efefef;
+}
+.header__gnb-list {
+  display: flex;
+  gap: 20px;
+}
+
+/* lnb */
+.header__lnb-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.header__lnb-btn {
+  flex: 0 0 auto;
+  margin-right: 15px;
+  padding: 8px 16px;
+}
+
+/* full modifier */
+.header__lnb--full .header__inner {
+  width: 100%;
+  padding-top: 50px;
+}

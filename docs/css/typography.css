@@ -1,0 +1,394 @@
+@charset "utf-8";
+@import url(../font/webfonts_pretendardgov.css);
+
+/* =========================================
+   Typography Tokens
+========================================= */
+:root {
+    /* font family */
+    --text-font-family-base: "PretendardGOV", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+
+    /* font weight */
+    --text-font-weight-regular: 400;
+    --text-font-weight-bold: 700;
+
+    /* line height */
+    --text-line-height-base: 1.5;
+
+    /* letter spacing */
+    --text-letter-spacing-wide: 1px;
+    --text-letter-spacing-base: 0;
+
+    /* Display */
+    --text-display-lg-size: 66px;
+    --text-display-md-size: 50px;
+    --text-display-sm-size: 40px;
+
+    /* Heading */
+    --text-heading-lg-size: 50px;
+    --text-heading-md-size: 40px;
+    --text-heading-sm-size: 32px;
+
+    /* Title */
+    --text-title-xxl-size: 32px;
+    --text-title-xl-size: 25px;
+    --text-title-lg-size: 21px;
+    --text-title-md-size: 19px;
+    --text-title-sm-size: 17px;
+    --text-title-xs-size: 15px;
+
+    /* Body */
+    --text-body-lg-size: 19px;
+    --text-body-md-size: 17px;
+    --text-body-sm-size: 15px;
+
+    /* Detail */
+    --text-detail-lg-size: 17px;
+    --text-detail-md-size: 15px;
+    --text-detail-sm-size: 13px;
+
+    /* Label */
+    --text-label-lg-size: 19px;
+    --text-label-md-size: 17px;
+    --text-label-sm-size: 15px;
+    --text-label-xs-size: 13px;
+
+    /* Links */
+    --text-links-lg-size: 19px;
+    --text-links-md-size: 17px;
+    --text-links-sm-size: 15px;
+}
+
+/* =========================================
+   Mobile
+========================================= */
+@media (max-width: 768px) {
+    :root {
+        /* Display */
+        --text-display-lg-size: 40px;
+        --text-display-md-size: 32px;
+        --text-display-sm-size: 25px;
+
+        /* Heading */
+        --text-heading-lg-size: 40px;
+        --text-heading-md-size: 32px;
+        --text-heading-sm-size: 25px;
+
+        /* Title */
+        --text-title-xxl-size: 25px;
+        --text-title-xl-size: 25px;
+        --text-title-lg-size: 21px;
+        --text-title-md-size: 19px;
+        --text-title-sm-size: 17px;
+        --text-title-xs-size: 15px;
+
+        /* Body */
+        --text-body-lg-size: 19px;
+        --text-body-md-size: 17px;
+        --text-body-sm-size: 15px;
+
+        /* Detail */
+        --text-detail-lg-size: 17px;
+        --text-detail-md-size: 15px;
+        --text-detail-sm-size: 13px;
+
+        /* Label */
+        --text-label-lg-size: 19px;
+        --text-label-md-size: 17px;
+        --text-label-sm-size: 15px;
+        --text-label-xs-size: 13px;
+
+        /* Links */
+        --text-links-lg-size: 19px;
+        --text-links-md-size: 17px;
+        --text-links-sm-size: 15px;
+    }
+}
+
+/* =========================================
+   Base Text Block
+========================================= */
+.text {
+    margin: 0;
+    font-family: var(--text-font-family-base);
+    font-size: 1rem;
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+    color: inherit;
+    word-break: keep-all;
+}
+
+/* =========================================
+   Weight Modifiers
+========================================= */
+.text--regular {
+    font-weight: var(--text-font-weight-regular);
+}
+.text--bold {
+    font-weight: var(--text-font-weight-bold);
+}
+
+/* =========================================
+   Display
+   화면의 가장 큰 강조 텍스트
+========================================= */
+.text--display-lg {
+    font-size: var(--text-display-lg-size);
+    font-weight: var(--text-font-weight-bold);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-wide);
+}
+
+.text--display-md {
+    font-size: var(--text-display-md-size);
+    font-weight: var(--text-font-weight-bold);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-wide);
+}
+
+.text--display-sm {
+    font-size: var(--text-display-sm-size);
+    font-weight: var(--text-font-weight-bold);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-wide);
+}
+
+/* =========================================
+   Heading
+   페이지 단위 타이틀
+========================================= */
+.text--heading-lg {
+    font-size: var(--text-heading-lg-size);
+    font-weight: var(--text-font-weight-bold);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-wide);
+}
+
+.text--heading-md {
+    font-size: var(--text-heading-md-size);
+    font-weight: var(--text-font-weight-bold);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-wide);
+}
+
+.text--heading-sm {
+    font-size: var(--text-heading-sm-size);
+    font-weight: var(--text-font-weight-bold);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-wide);
+}
+
+/* =========================================
+   Title
+   템플릿/모듈 단위 제목
+========================================= */
+.text--title-xxl {
+    font-size: var(--text-title-xxl-size);
+    font-weight: var(--text-font-weight-bold);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-wide);
+}
+
+.text--title-xl {
+    font-size: var(--text-title-xl-size);
+    font-weight: var(--text-font-weight-bold);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+.text--title-lg {
+    font-size: var(--text-title-lg-size);
+    font-weight: var(--text-font-weight-bold);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+.text--title-md {
+    font-size: var(--text-title-md-size);
+    font-weight: var(--text-font-weight-bold);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+.text--title-sm {
+    font-size: var(--text-title-sm-size);
+    font-weight: var(--text-font-weight-bold);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+.text--title-xs {
+    font-size: var(--text-title-xs-size);
+    font-weight: var(--text-font-weight-bold);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+/* =========================================
+   Body
+   본문 텍스트
+========================================= */
+.text--body-lg {
+    font-size: var(--text-body-lg-size);
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+.text--body-md {
+    font-size: var(--text-body-md-size);
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+.text--body-sm {
+    font-size: var(--text-body-sm-size);
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+/* body bold variation */
+.text--body-lg.text--bold,
+.text--body-md.text--bold,
+.text--body-sm.text--bold {
+    font-weight: var(--text-font-weight-bold);
+}
+
+/* =========================================
+   Detail
+   보조 정보, 작은 설명
+========================================= */
+.text--detail-lg {
+    font-size: var(--text-detail-lg-size);
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+.text--detail-md {
+    font-size: var(--text-detail-md-size);
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+.text--detail-sm {
+    font-size: var(--text-detail-sm-size);
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+/* detail bold variation */
+.text--detail-lg.text--bold,
+.text--detail-md.text--bold,
+.text--detail-sm.text--bold {
+    font-weight: var(--text-font-weight-bold);
+}
+
+/* =========================================
+   Label
+   버튼, 폼, 칩 등 구성 요소 내부 텍스트
+========================================= */
+.text--label-lg {
+    font-size: var(--text-label-lg-size);
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+.text--label-md {
+    font-size: var(--text-label-md-size);
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+.text--label-sm {
+    font-size: var(--text-label-sm-size);
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+.text--label-xs {
+    font-size: var(--text-label-xs-size);
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+}
+
+/* label bold variation */
+.text--label-lg.text--bold,
+.text--label-md.text--bold,
+.text--label-sm.text--bold,
+.text--label-xs.text--bold {
+    font-weight: var(--text-font-weight-bold);
+}
+
+/* =========================================
+   Links
+   링크 전용 텍스트
+========================================= */
+.text--links-lg {
+    font-size: var(--text-links-lg-size);
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.text--links-md {
+    font-size: var(--text-links-md-size);
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.text--links-sm {
+    font-size: var(--text-links-sm-size);
+    font-weight: var(--text-font-weight-regular);
+    line-height: var(--text-line-height-base);
+    letter-spacing: var(--text-letter-spacing-base);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+/* links bold variation */
+.text--links-lg.text--bold,
+.text--links-md.text--bold,
+.text--links-sm.text--bold {
+    font-weight: var(--text-font-weight-bold);
+}
+
+/* =========================================
+   Optional Helpers
+========================================= */
+.text--center {
+    text-align: center;
+}
+
+.text--right {
+    text-align: right;
+}
+
+.text--underline {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.text--ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text--break {
+    word-break: break-word;
+}
