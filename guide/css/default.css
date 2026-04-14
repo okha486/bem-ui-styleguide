@@ -6,9 +6,9 @@ Create date : 2026-04
 @import url(../font/RemixIcon_Fonts_v4.9.1/remixicon.css);
 @import url(../font/webfonts_pretendardgov.css);
 
-/*-------------------------------------------------
-  Reset
--------------------------------------------------*/
+/* =========================================
+  1. Reset
+========================================= */
 * { margin:0; padding:0; box-sizing: border-box;}
 *::before, *::after {
   box-sizing: border-box;
@@ -59,9 +59,9 @@ caption, legend, .sr-only, .hidden, .IR {
 }
 
 
-/*-------------------------------------------------
-  Root
--------------------------------------------------*/
+/* =========================================
+  2. Root (Tokens)
+========================================= */
 :root {
   /* font family */
   --text-font-family: "PretendardGOV", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
@@ -97,6 +97,13 @@ caption, legend, .sr-only, .hidden, .IR {
   --text-sm: 16px; /* base */
   --text-xs: 14px;
 
+  /* icon : 아이콘 사용 사이즈 */
+  --icon-size-xxl: 48px;
+  --icon-size-xl: 32px;
+  --icon-size-lg: 24px;
+  --icon-size-md: 20px;
+  --icon-size-sm: 16px; /* base */
+
   --color-text-black: #000;
 }
 @media (max-width: 768px) {
@@ -120,5 +127,53 @@ caption, legend, .sr-only, .hidden, .IR {
     --text-md: 18px;
     --text-sm: 16px;
     --text-xs: 14px;
+
+    /* icon : 아이콘 사용 사이즈 */
+    --icon-size-xxl: 32px;
+    --icon-size-xl: 26px;
+    --icon-size-lg: 24px;
+    --icon-size-md: 20px;
+    --icon-size-sm: 16px;
   }
 }
+
+
+/* =========================================
+  3. Base
+========================================= */
+/* position */
+.pos-r { position: relative; }
+.pos-a { position: absolute; }
+.pos-f { position: fixed; }
+
+/* text align */
+.text--left { text-align: left; }
+.text--center { text-align: center; }
+.text--right { text-align: right; }
+.text--underline {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.text--ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* display */
+.d-block { display: block; }
+.d-inline { display: inline-block; }
+.d-flex { display: flex; }
+
+/* margin / padding */
+.m-10 { margin: 10px }
+.mt-10 { margin-top: 10px; }
+.ml-10 { margin-left: 10px; }
+.mb-10 { margin-bottom: 10px; }
+.mr-10 { margin-right: 10px; }
+
+.p-20 { padding: 20px; }
+.pt-20 { padding-top: 20px; }
+.pl-20 { padding-left: 20px; }
+.pb-20 { padding-bottom: 20px; }
+.pr-20 { padding-right: 20px; }
