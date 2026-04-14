@@ -97,6 +97,13 @@ caption, legend, .sr-only, .hidden, .IR {
   --text-sm: 16px; /* base */
   --text-xs: 14px;
 
+  /* icon : 아이콘 사용 사이즈 */
+  --icon-size-xxl: 48px;
+  --icon-size-xl: 32px;
+  --icon-size-lg: 24px;
+  --icon-size-md: 20px;
+  --icon-size-sm: 16px; /* base */
+
   --color-text-black: #000;
 }
 @media (max-width: 768px) {
@@ -120,6 +127,13 @@ caption, legend, .sr-only, .hidden, .IR {
     --text-md: 18px;
     --text-sm: 16px;
     --text-xs: 14px;
+
+    /* icon : 아이콘 사용 사이즈 */
+    --icon-size-xxl: 32px;
+    --icon-size-xl: 26px;
+    --icon-size-lg: 24px;
+    --icon-size-md: 20px;
+    --icon-size-sm: 16px;
   }
 }
 

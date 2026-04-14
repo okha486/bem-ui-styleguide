@@ -94,6 +94,12 @@ Create date : 2026-04
 .text--sm {font-size: var(--text-sm);}
 .text--xs {font-size: var(--text-xs);}
 
+/* icon : 아이콘 사용 사이즈 */
+.icon--xxl {font-size: var(--icon-size-xxl);}
+.icon--xl {font-size: var(--icon-size-xl);}
+.icon--lg {font-size: var(--icon-size-lg);}  /* 기본 */
+.icon--md {font-size: var(--icon-size-md);}
+.icon--sm {font-size: var(--icon-size-sm);}
 
 .help-text{
   display:flex;
@@ -778,7 +784,7 @@ a.button--txt:focus {
 }
 .button--line:hover {
   background-color: #f8f8f8;
- }
+}
 
 /* button Icon Modifier */
 .button--icon {
