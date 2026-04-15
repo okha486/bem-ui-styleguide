@@ -450,6 +450,10 @@ Create date : 2026-04
 }
 
 
+.is-error__msg {
+  display: block;
+  color: #ff0000;
+}
 /* email */
 .email-field {
   gap: 8px;
@@ -488,10 +492,6 @@ Create date : 2026-04
 }
 .email-field__separator {
   flex: 0 0 auto;
-}
-.email-field__error {
-  display: block;
-  color: #ff0000;
 }
 
 /* 주소검색 Address Field */
@@ -726,7 +726,7 @@ Create date : 2026-04
   text-underline-offset : 5px;
 }
 
-/* button radius Modifier */
+/* button radius  */
 .button--radius9 {
   height: auto;
   width: auto;
