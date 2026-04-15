@@ -725,6 +725,10 @@ Create date : 2026-04
   text-decoration: underline;
   text-underline-offset : 5px;
 }
+a.button.button--txt:hover,
+a.button.button--txt:focus {
+  background-color: #edf1f5;
+}
 
 /* button radius  */
 .button--radius9 {
