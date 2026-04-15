@@ -94,15 +94,15 @@ caption, legend, .sr-only, .hidden, .IR {
   --text-xl: 26px;
   --text-lg: 22px;
   --text-md: 18px;
-  --text-sm: 16px; /* base */
+  --text-sm: 16px; /* 기본 */
   --text-xs: 14px;
 
   /* icon : 아이콘 사용 사이즈 */
-  --icon-size-xxl: 48px;
+  --icon-size-xxl: 40px;
   --icon-size-xl: 32px;
-  --icon-size-lg: 24px;
+  --icon-size-lg: 24px; /* 기본 */
   --icon-size-md: 20px;
-  --icon-size-sm: 16px; /* base */
+  --icon-size-sm: 16px; 
 
   --color-text-black: #000;
 }
