@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/main_layout.css">
+<link rel="stylesheet" href="./css/main_layout_respond.css">
+<title>layout</title>
+
+</head>
+<body>
+    <div class="main-portal">
+        <header class="main-portal__header">
+            <h1 class="main-portal__title" tabindex="0">헤더</h1>
+            <button type="button" class="main-portal__menu-button">
+                <span class="sr-only">전체 메뉴 열기</span>
+                ☰
+            </button>
+        </header>
+
+        <main class="main-portal__main">
+            <div class="main-portal__inner">
+                <section class="main-portal__site">
+                    box1
+                </section>
+                <section class="main-portal__site">
+                    box2
+                </section>
+                <section class="main-portal__site">
+                    box3
+                </section>
+                <section class="main-portal__site">
+                    box4
+                </section>
+            </div>
+        </main>
+
+        <footer class="site-footer" aria-labelledby="site-footer-title">
+            <div class="site-footer__inner">
+                <h2 id="site-footer-title" class="sr-only">사이트 하단 정보</h2>
+
+                <!-- 관련기관 -->
+                <nav class="site-footer__family" aria-label="관련 기관 바로가기">
+                    <ul class="site-footer__family-list">
+                        <li class="site-footer__family-item">
+                            <a href="#" class="site-footer__link">한국원자력안전재단 대표홈페이지</a>
+                        </li>
+                        <li class="site-footer__family-item">
+                            <a href="#" class="site-footer__link">원자력안전위원회</a>
+                        </li>
+                        <li class="site-footer__family-item">
+                            <a href="#" class="site-footer__link">한국원자력안전기술원</a>
+                        </li>
+                        <li class="site-footer__family-item">
+                            <a href="#" class="site-footer__link">한국원자력통제기술원</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- 관련정보 -->
+                <div class="site-footer__body">
+                    <h3 id="site-footer-org-name" class="site-footer__logo">
+                        <img src="./images/logo.svg" alt="한국원자력안전재단">
+                    </h3>
+                    
+                    <!-- 주소 -->
+                    <div class="site-footer__info">
+                        <address class="site-footer__address">
+                            <p class="site-footer__text">
+                                13493<br>
+                                경기도 성남시 분당구 대왕판교로 644번길49<br>
+                                (삼평동) DTCT워 1관 8층 대표자 김제남
+                            </p>
+                        </address>
+
+                        <dl class="site-footer__contact">
+                            <div class="site-footer__contact-row">
+                                <dt>사업자등록번호</dt>
+                                <dd>120-82-10910</dd>
+                            </div>
+                            
+                            <div class="site-footer__contact-row">
+                                <dt>대표전화</dt>
+                                <dd>031-626-6121</dd>
+                            </div>
+                            
+                            <div class="site-footer__contact-row">
+                                <dt>FAX</dt>
+                                <dd>031-626-6010</dd>
+                            </div>
+                            
+                            <div class="site-footer__contact-row">
+                                <dt>E-mail</dt>
+                                <dd>okfons@kofons.co.kr</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- 연락처 -->
+                    <div class="site-footer__contact" aria-labelledby="site-footer-contact-title">
+
+                        <div class="site-footer__contact-head">
+                            <div class="site-footer__info">
+                                <h3 class="site-footer__contact-name">방사선 안전교육 | 항고승무원안전교육</h3>
+                                <p class="site-footer__contact-text">
+                                    문의전화
+                                    <a href="tel:0316260000" class="site-footer__link">031-626-0000</a>
+                                </p>
+                                <p class="site-footer__contact-text">
+                                    E-mail
+                                    <a href="mailto:sample1@example.com" class="site-footer__link">sample1@example.com</a>
+                                </p>
+                            </div>
+                            <button type="button" class="site-footer__button">교육전문 쳇봇</button>
+                        </div>
+
+                        <ul class="site-footer__contact-list">
+                            <li>
+                                <h3 class="site-footer__contact-name">수출입요건확인</h3>
+                                <p class="site-footer__contact-text">
+                                    문의전화
+                                    <a href="tel:0316260000" class="site-footer__link">031-626-0000</a>
+                                </p>
+                                <p class="site-footer__contact-text">
+                                    E-mail
+                                    <a href="mailto:sample1@example.com" class="site-footer__link">sample1@example.com</a>
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="site-footer__contact-name">성능검증 종합관리</h3>
+                                <p class="site-footer__contact-text">
+                                    문의전화
+                                    <a href="tel:0316260000" class="site-footer__link">031-626-0000</a>
+                                </p>
+                                <p class="site-footer__contact-text">
+                                    E-mail
+                                    <a href="mailto:sample1@example.com" class="site-footer__link">sample1@example.com</a>
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="site-footer__contact-name">원자력안전 규제교육 기반구축</h3>
+                                <p class="site-footer__contact-text">
+                                    문의전화
+                                    <a href="tel:0316260000" class="site-footer__link">031-626-0000</a>
+                                </p>
+                                <p class="site-footer__contact-text">
+                                    E-mail
+                                    <a href="mailto:sample1@example.com" class="site-footer__link">sample1@example.com</a>
+                                </p>
+                            </li>
+
+                            <li>
+                                <h3 class="site-footer__contact-name">방호정보통합관리</h3>
+                                <p class="site-footer__contact-text">
+                                    문의전화
+                                    <a href="tel:0316260000" class="site-footer__link">031-626-0000</a>
+                                </p>
+                                <p class="site-footer__contact-text">
+                                    E-mail
+                                    <a href="mailto:sample1@example.com" class="site-footer__link">sample1@example.com</a>
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="site-footer__contact-name">기금통합관리</h3>
+                                <p class="site-footer__contact-text">
+                                    문의전화
+                                    <a href="tel:0316260000" class="site-footer__link">031-626-0000</a>
+                                </p>
+                                <p class="site-footer__contact-text">
+                                    E-mail
+                                    <a href="mailto:sample1@example.com" class="site-footer__link">sample1@example.com</a>
+                                </p>
+                            </li>
+                            <li>
+                                <h3 class="site-footer__contact-name">안전기술보고</h3>
+                                <p class="site-footer__contact-text">
+                                    문의전화
+                                    <a href="tel:0316260000" class="site-footer__link">031-626-0000</a>
+                                </p>
+                                <p class="site-footer__contact-text">
+                                    E-mail
+                                    <a href="mailto:sample1@example.com" class="site-footer__link">sample1@example.com</a>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 개인정보 처리방침/카피라이드 -->
+                <div class="site-footer__bottom">
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
