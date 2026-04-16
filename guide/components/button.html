@@ -178,6 +178,49 @@
 
         <section class="component-doc">
             <article class="component-doc__group">
+                <h2>스위치</h2>
+                <div class="item"> 
+                    
+                    <fieldset class="form-toggle">
+                        <legend class="form-toggle__legend">on/off 설정</legend>
+
+                        <!-- 기본 -->
+                        <div class="form-toggle__item">
+                            <input 
+                                type="checkbox"
+                                id="alarm"
+                                class="form-toggle__input"
+                                role="switch"
+                            />
+                            <label for="alarm" class="form-toggle__label">
+                                <span class="form-toggle__text">on/off</span>
+                                <span class="form-toggle__state" aria-hidden="true"></span>
+                            </label>
+                        </div>
+
+                        <!-- 비활성화 -->
+                        <div class="form-toggle__item">
+                            <input 
+                                type="checkbox"
+                                id="alarm-disabled"
+                                class="form-toggle__input"
+                                role="switch"
+                                disabled
+                            />
+                            <label for="alarm-disabled" class="form-toggle__label">
+                                <span class="form-toggle__text">on/off</span>
+                                <span class="form-toggle__state form-toggle__state--disabled"></span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                </div>
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section class="component-doc">
+            <article class="component-doc__group">
                 <h2>아이콘</h2>
                 <div class="item"> 
                     
@@ -198,6 +241,16 @@
 
                     <button type="button" class="button button--arrow js-toggle" data-target="neq_certi_a_01">
                         <span class="sr-only">내용 보기</span>
+                    </button>                    
+
+                    <br><br>
+
+                    <button class="button button--alram">
+                        <span class="icon icon--xl" aria-hidden="true">
+                           <i class="ri-notification-2-line"></i>
+                        </span>
+                        <span class="button--alram__number">5</span>
+                        <span class="sr-only">알림</span>
                     </button>
 
                     <br><br>
@@ -252,7 +305,6 @@
                         <i class="ri-skip-right-line"></i>
                         <i class="ri-skip-left-line"></i>
                         <i class="ri-play-line"></i>
-
 
                         <span class="help-text__icon" aria-hidden="true"></span>
                     </span>
