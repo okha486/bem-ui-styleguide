@@ -8,35 +8,6 @@ Create date : 2026-04
 /* =========================================
   Utilities
 ========================================= */
-/* 스킵링크 */
-#skip-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10000;
-  width: 100%;
-  text-align: center;
-  background-color: #000; 
-}
-#skip-nav a {  
-  display: flex ;
-  justify-content: center;
-  align-items: center;
-  height: 52px; 
-  font-size: 22px;
-  color: #fff;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  clip: inherit;
-  text-decoration: none;
-}
-.skip-nav:focus {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
 /* 타이틀 */
 .title--h1 {
   font-size: var(--text-heading-xl);
@@ -730,6 +701,24 @@ a.button.button--txt:focus {
   background-color: #edf1f5;
 }
 
+.button--alram {
+  position: relative;
+  background: transparent;
+}
+.button--alram__number {
+  border-radius: 100%;
+  background: red;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  width: 20px;
+  height: 20px;
+}
+.button--alram:hover,
+.button--alram:focus {
+  background-color: transparent;
+}
+
 /* button radius  */
 .button--radius9 {
   height: auto;
@@ -840,6 +829,71 @@ a.button.button--txt:focus {
 }
 
 
+/* 스위치 버튼 */
+.form-toggle {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+.form-toggle__legend {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+.form-toggle__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+/* input 숨김 (접근성 유지) */
+.form-toggle__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+}
+/* 라벨이 UI 역할 */
+.form-toggle__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+/* 토글 UI */
+.form-toggle__state {
+    width: 44px;
+    height: 22px;
+    background: #ccc;
+    border-radius: 999px;
+    position: relative;
+    transition: 0.3s;
+}
+.form-toggle__state::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+/* ON 상태 */
+.form-toggle__input:checked + .form-toggle__label .form-toggle__state {
+    background: #4caf50;
+}
+.form-toggle__input:checked + .form-toggle__label .form-toggle__state::after {
+    transform: translateX(22px);
+}
+/* disabled */
+.form-toggle__input:disabled + .form-toggle__label {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+
 /* 툴팁 */
 .tooltip {
   position: relative;
@@ -910,6 +964,66 @@ a.button.button--txt:focus {
   content: "\ea6e";
   font-family: "remixicon";
   color: #C5C5C5;
+}
+
+/* 페이지네이션 */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 8px;
+  width: 100%;
+  margin-top: 40px;
+}
+.pagination a {
+  text-decoration: none;
+}
+.pagination .page-navi.prev {
+  order: 1;
+  padding: 0 4px 0 8px;
+}
+.pagination .page-navi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  color: #555;
+  min-width: 6px;
+  height: 40px;
+}
+.pagination .page-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  order: 2;
+  gap: 8px;
+}
+.pagination .page-links .page-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  color: #555;
+  min-width: 40px;
+  height: 40px;
+}
+.pagination .page-links .page-link.active {
+  font-weight: 700;
+  color: #fff;
+  border-radius: 6px;
+  background-color: #134aa9;
+}
+.pagination .page-links .page-link.link-dot::before {
+  display: inline-block;
+  content: '...';
+  font-family: "remixicon";
+  font-family: e;
+}
+.pagination .page-navi.next{
+  order: 3;
+  padding: 0 4px 0 8px;
 }
 
 
