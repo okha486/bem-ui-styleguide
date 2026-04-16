@@ -1,0 +1,27 @@
+/* tablet */
+@media (max-width: 1024px) {
+    .main-portal__inner {
+        padding: 0.0rem 6% 6.0rem 6%;
+        grid-template-columns: 1fr;
+    }
+    .site-footer__body {
+        grid-template-columns: 1fr;
+    }
+    .site-footer__info,
+    .site-footer__contact {
+        grid-column: 1 / 3;
+        width: 100%;
+    }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    .site-footer__contact-head,
+    .site-footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .site-footer__contact-list {
+        grid-template-columns: 1fr;
+    }
+}

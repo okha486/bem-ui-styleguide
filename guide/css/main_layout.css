@@ -1,0 +1,148 @@
+@charset "UTF-8";
+/* =================================================
+title       : KOFONS Reset / Root
+Create date : 2026-04
+================================================= */
+@import url(../font/RemixIcon_Fonts_v4.9.1/remixicon.css);
+@import url(../font/webfonts_pretendardgov.css);
+
+.main-portal {}
+.main-portal__main {}
+.main-portal__inner {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 12px;
+    /* padding: 0.0rem 12.5% 6.0rem 12.5%; */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.main-portal__site {
+    width:100%;
+    height: 320px;
+    border-radius: 10px;
+    background: rgb(255, 246, 248);
+}
+.main-portal__footer {
+    width: 100%;
+    border-top: 1px solid #ddd;
+    paddinG: 20px 0;
+}
+
+/* 푸터 */
+.site-footer {
+    background-color: #f5f5f5;
+    color: #222;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-top: 1px solid #d9d9d9;
+}
+.site-footer__inner {
+    height: 100%;
+}
+.site-footer__family {
+    background-color: #dfe7ef;
+    padding: 0.75rem 1.25rem;
+}
+.site-footer__family-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+.site-footer__family-item {
+    position: relative;
+}
+.site-footer__family-item::after {
+    display: inline-block;
+    content:'>';
+    margin-left: 10px;
+}
+.site-footer__family-item:last-child::after {
+    display: none;
+}
+
+.site-footer__link {
+    color: inherit;
+    text-decoration: none;
+}
+.site-footer__link:hover,
+.site-footer__link:focus {
+    text-decoration: underline;
+    outline: 2px solid #005ea8;
+    outline-offset: 2px;
+}
+.site-footer__body {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    /* grid-template-rows: repeat(2, 100px);
+    grid-auto-rows: 100px; */
+    grid-template-columns: 520px 1fr;
+    gap: 30px;
+    align-items: stretch;
+    padding: 2rem 1.25rem;
+}
+.site-footer__logo {
+    grid-column: 1 / 3;
+}
+.site-footer__contact {
+    margin: 0;
+}
+.site-footer__contact dt {
+    min-width: 6.5rem;
+    font-weight: 700;
+}
+.site-footer__contact dd {
+    margin: 0;
+}
+.site-footer__contact-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.site-footer__address {
+    margin-bottom: 1.5rem;
+    font-style: normal;
+}
+
+.site-footer__contact-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.site-footer__info {
+    flex: 1 0 34%;
+}
+.site-footer__contact-list {
+    /* display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 1rem 2rem; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 20px;
+    margin: 0;
+    padding: 20px 0 0;
+    list-style: none;
+    border-top: 2px #ccc dotted
+}
+.site-footer__contact-name {
+    margin: 0 0 6px;
+    font-weight: 700;
+}
+.site-footer__contact-text {
+    margin: 0.125rem 0;
+    font-size: 0.875rem;
+}
+.site-footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-top: 1px solid #cfcfcf;
+}
