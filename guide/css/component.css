@@ -903,6 +903,10 @@ a.button.button--txt:focus {
   position: relative;
   display: inline-block;
 }
+.jstooltip_auto .tooltip__text.is-auto {
+  opacity: 1;
+  visibility: visible;
+}
 .tooltip__trigger {
   position: relative;
   display: inline-flex;
@@ -927,7 +931,8 @@ a.button.button--txt:focus {
   line-height: 1;
 }
 .tooltip__text {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   position: absolute;
   bottom: calc(100% + 6px);
   left: 50%;
@@ -942,6 +947,29 @@ a.button.button--txt:focus {
   line-height: 20px;
   z-index: 10;
 }
+/* 페이지 로드시 자동 실행 */
+.tooltip__text.is-auto {
+  animation: tooltipAutoShow 5s ease forwards;
+}
+@keyframes tooltipAutoShow {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  10% {
+    opacity: 1;
+    visibility: visible;
+  }
+  90% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 .tooltip__text::before {
   content: "";
   position: absolute;
@@ -954,7 +982,9 @@ a.button.button--txt:focus {
 }
 .tooltip:hover .tooltip__text,
 .tooltip:focus-within .tooltip__text {
-  display: block;
+  /* display: block; */
+  opacity: 1;
+  visibility: initial;
 }
 
 /* breadcrumb */
