@@ -9,6 +9,8 @@ $(function () {
     /* *******************************
     * 컨텐츠 구동 함수
     ********************************** */
+    fnTooltipAuto();    //툴팁 새로고침 시 마다 5초 보여짐
+    //fnTooltipShown();    //툴팁 한번만 5초 보여짐
     fnTab();    // 탭
     fnShowBtn(); // 화살표 위_아래 토글 버튼
     fnAccordion();  // 아코디언 메뉴
@@ -19,6 +21,36 @@ $(function () {
     fnSwiper(); // 슬라이드
 });
 
+
+// 툴팁 화면 인입시 5초 노출 + 새로고침 시 노출
+function fnTooltipAuto() {
+    const $tooltip = $('.jstooltip_auto .tooltip__text');
+    $tooltip.addClass('is-auto');
+    setTimeout(function () {
+        $tooltip.removeClass('is-auto');
+    }, 5000)
+}
+
+// 툴팁 인입 시 한번만 보여주기
+function fnTooltipShown() {
+    // 이미 한 번 보여준 적 있는지 체크 (브라우저에 저장된 값 확인)
+    if (!localStorage.getItem('tooltipShown')) {
+
+        // 툴팁 요소 선택
+        const $tooltip = $('.tooltip__text');
+
+        // 자동 노출 클래스 추가 (CSS에서 보이도록 처리)
+        $tooltip.addClass('is-auto');
+
+        // 5초 후 툴팁 숨김 처리
+        setTimeout(function () {
+            $tooltip.removeClass('is-auto');
+            
+            // "이미 한 번 보여줬다"는 기록 저장 → 이후 페이지 새로고침해도 다시 안 뜸
+            localStorage.setItem('tooltipShown', 'true');
+        }, 5000);
+    }
+}
 
 // 탭
 function fnTab() {
