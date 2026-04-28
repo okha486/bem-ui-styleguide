@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>헤더</title>
+
+<link rel="stylesheet" href="./js/swiper/css/swiper-bundle.min.css">
+
+<!-- 가이드 레이아웃 : SyntaxHighlighter 템플릿 스타일 -->
+<link rel="stylesheet" href="./css/styleCore.css">
+<link rel="stylesheet" href="./css/shThemeEclipse.css">
+
+<!-- 사용 컨텐츠 스타일 참고 파일(사용파일) -->
+<link rel="stylesheet" href="./css/styleguide.css">
+
+<!-- 라이브러리 -->
+<script src="./js/jquery-3.5.1.min.js"></script>
+<script src="./js/jquery-ui.js"></script>
+<script src="./js/swiper/js/swiper-bundle.js"></script>
+<script src="./js/swiper/js/swiper-bundle.min.js"></script>
+
+<!-- 가이드 레이아웃 : SyntaxHighlighter 템플릿 스크립트 -->
+<script src="./js/styleCore.js"></script>
+<script src="./js/shBrushXml.js"></script>
+<script src="./js/guidLayout.js"></script>
+
+<!-- 사용 컨텐츠 스크립트 참고 파일(사용파일) -->
+<script src="./js/styleguide.js"></script>
+
+<style>
+.gnb__submenu--full {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 100;
+
+  width: 100%;
+  padding: 16px 24px;
+
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.gnb__submenu--full[hidden] {
+  display: none;
+}
+.gnb__submenu--open {
+  display: flex;
+  gap: 24px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="wrap">
+    <!-- Header -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__brand">
+                <a href="#" class="header__logo">
+                    로고
+                </a>
+                <span class="header__system-name">
+                    타이틀 설명
+                </span>
+            </div>
+
+            <div class="header__util">
+                <button class="header__util-btn">로그인</button>
+                <button class="header__util-btn">회원가입</button>
+                <button class="header__util-btn">고객센터</button>
+                <button class="header__util-btn">전체메뉴</button>
+            </div>
+
+            <!-- 모바일 -->
+            <button type="button" class="menu-toggle" aria-controls="mobileMenu" aria-expanded="false">
+                <span class="menu-toggle__line"></span>
+                <span class="menu-toggle__line"></span>
+                <span class="menu-toggle__line"></span>
+                <span class="sr-only">전체메뉴 열기</span>
+            </button>
+            <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+                <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="전체 메뉴">
+                    <h2 class="mobile-menu__title">전체업무</h2>
+                    <button type="button" class="mobile-menu__close" aria-label="전체 메뉴 닫기">
+                        <i class="ri-close-fill"></i>
+                        <span class="sr-only">닫기</span>
+                    </button>
+
+                    <nav class="mobile-menu__nav" aria-label="모바일 전체 메뉴">
+                        <section class="mobile-menu__group">
+                            <h3 class="mobile-menu__heading">교육 +</h3>
+                            <ul class="mobile-menu__list">
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">방사선 안전교육</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">항공승무원 우주방사선 안전교육</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">성능검증종합관리</a></li>
+                            </ul>
+                        </section>
+
+                        <section class="mobile-menu__group">
+                            <h3 class="mobile-menu__heading">부담금 +</h3>
+                            <ul class="mobile-menu__list">
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">기금통합관리</a></li>
+                            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">수출입요건확인</a></li>
+                            </ul>
+                        </section>
+
+                        <div class="mobile-menu__util">
+                            <a href="#" class="mobile-menu__util-link">회원정보변경</a>
+                            <a href="#" class="mobile-menu__util-link">업무권한신청</a>
+                            <a href="#" class="mobile-menu__util-link">로그아웃</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- //모바일 -->
+        </div>
+    </header>
+    <nav class="gnb" aria-label="주요 메뉴">
+        <div class="gnb__inner">
+            <ul class="gnb__list">
+                <li class="gnb__item">
+                    <button type="button" 
+                        class="gnb__button" 
+                        aria-expanded="false" 
+                        aria-controls="gnbPanel1"
+                    >
+                        메뉴1
+                        <span class="gnb__icon" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li class="gnb__item">
+                    <button type="button" 
+                        class="gnb__button" 
+                        aria-expanded="false" 
+                        aria-controls="gnbPanel2"
+                    >
+                        메뉴2
+                        <span class="gnb__icon" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li class="gnb__item">
+                    <button type="button" 
+                        class="gnb__button" 
+                        aria-expanded="false" 
+                        aria-controls="gnbPanel3"
+                    >
+                        메뉴3
+                        <span class="gnb__icon" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li class="gnb__item">
+                    <button type="button" 
+                        class="gnb__button" 
+                        aria-expanded="false" 
+                        aria-controls="gnbPanel3"
+                    >
+                        메뉴4
+                        <span class="gnb__icon" aria-hidden="true"></span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="gnb__submenu gnb__submenu--full" id="gnbPanel1" hidden>
+            <div class="gnb__inner">
+                <a href="#" class="gnb__submenu-link">메뉴1 서브1</a>
+                <a href="#" class="gnb__submenu-link">메뉴1 서브2</a>
+            </div>
+        </div>
+        <div class="gnb__submenu gnb__submenu--full" id="gnbPanel2" hidden>
+            <div class="gnb__inner">
+                <a href="#" class="gnb__submenu-link">메뉴2 서브1</a>
+                <a href="#" class="gnb__submenu-link">메뉴2 서브2</a>
+            </div>
+        </div>
+        <div class="gnb__submenu gnb__submenu--full" id="gnbPanel3" hidden>
+            <div class="gnb__inner">
+                <a href="#" class="gnb__submenu-link">메뉴3 서브1</a>
+                <a href="#" class="gnb__submenu-link">메뉴3 서브2</a>
+            </div>
+        </div>
+        <div class="gnb__submenu gnb__submenu--full" id="gnbPanel3" hidden>
+            <div class="gnb__inner">
+                <a href="#" class="gnb__submenu-link">메뉴4 서브1</a>
+                <a href="#" class="gnb__submenu-link">메뉴4 서브2</a>
+            </div>
+        </div>
+    </nav>
+    <!-- //Header -->
+
+    <main id="content" style="height:1000px; background:#aaffff;">
+        <div class="section">
+            메인 컨텐츠
+        </div>
+    </main>
+
+    <footer id="footer" style="height:200px">
+        footer
+    </footer>
+</div>
+
+<script>
+$(document).ready(function() {
+    initGnbFullMenu();  //gnb full
+    initMobileMenu();
+});
+
+
+function initGnbFullMenu() {
+    var gnb = document.querySelector('.gnb');
+    if (!gnb) return;
+
+    var items = gnb.querySelectorAll('.gnb__item');
+    var buttons = gnb.querySelectorAll('.gnb__button');
+    var panels = gnb.querySelectorAll('.gnb__submenu--full');
+
+    function closeAll() {
+        gnb.classList.remove('gnb--open');
+
+        items.forEach(function (item) {
+            item.classList.remove('gnb__item--active');
+        });
+
+        buttons.forEach(function (button) {
+            button.setAttribute('aria-expanded', 'false');
+        });
+
+        panels.forEach(function (panel) {
+            panel.classList.remove('gnb__submenu--open');
+            panel.setAttribute('hidden', '');
+        });
+    }
+
+    function openMenu(button) {
+        var currentItem = button.closest('.gnb__item');
+        var panelId = button.getAttribute('aria-controls');
+        var currentPanel = document.getElementById(panelId);
+
+        if (!currentPanel) return;
+
+        closeAll();
+
+        gnb.classList.add('gnb--open');
+
+        if (currentItem) {
+            currentItem.classList.add('gnb__item--active');
+        }
+
+        button.setAttribute('aria-expanded', 'true');
+
+        currentPanel.classList.add('gnb__submenu--open');
+        currentPanel.removeAttribute('hidden');
+    }
+
+    function toggleMenu(button) {
+        var isOpen = button.getAttribute('aria-expanded') === 'true';
+
+        if (isOpen) {
+            closeAll();
+        } else {
+            openMenu(button);
+        }
+    }
+
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            toggleMenu(button);
+        });
+
+        button.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowDown') {
+                event.preventDefault();
+                openMenu(button);
+
+                var panelId = button.getAttribute('aria-controls');
+                var currentPanel = document.getElementById(panelId);
+                var firstLink = currentPanel.querySelector(
+                    'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                );
+
+                if (firstLink) {
+                    firstLink.focus();
+                }
+            }
+        });
+    });
+
+    document.addEventListener('click', function (event) {
+        if (!gnb.contains(event.target)) {
+            closeAll();
+        }
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            var activeButton = gnb.querySelector('.gnb__button[aria-expanded="true"]');
+
+            closeAll();
+
+            if (activeButton) {
+            activeButton.focus();
+            }
+        }
+    });
+}
+
+function initMobileMenu() {
+    var button = document.querySelector('.menu-toggle');
+    var menu = document.querySelector('.mobile-menu');
+    var closeBtn = document.querySelector('.mobile-menu__close');
+
+    if (!button || !menu) return;
+
+    function openMenu() {
+        menu.classList.add('mobile-menu--open');
+        menu.setAttribute('aria-hidden', 'false');
+        button.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        menu.classList.remove('mobile-menu--open');
+        menu.setAttribute('aria-hidden', 'true');
+        button.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        button.focus();
+    }
+
+    button.addEventListener('click', function () {
+        var isOpen = button.getAttribute('aria-expanded') === 'true';
+
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+            closeMenu();
+        });
+    }
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && menu.classList.contains('mobile-menu--open')) {
+            closeMenu();
+        }
+    });
+}
+
+
+</script>
+</body>
+</html>
