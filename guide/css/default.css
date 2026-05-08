@@ -15,6 +15,7 @@ Create date : 2026-04
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
+i, address {font-style: normal;}
 ul, ol, dl { margin:0; padding:0; }
 li, dt, dd { list-style: none; }
 html {
@@ -45,7 +46,7 @@ button:disabled {
   color: light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
   border-color: light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
 }
-caption, legend, .sr-only, .hidden, .IR {
+caption, .sr-only, .hidden, .IR {
   overflow: hidden;
   position:absolute;
   width:1px;
@@ -56,6 +57,35 @@ caption, legend, .sr-only, .hidden, .IR {
   clip:rect(0 0 0 0);
   white-space:nowrap;
   border:0;
+}
+
+/* 스킵링크 */
+#skip-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  text-align: center;
+  background-color: #000; 
+}
+#skip-nav a {  
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  height: 52px; 
+  font-size: 22px;
+  color: #fff;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  clip: inherit;
+  text-decoration: none;
+}
+.skip-nav:focus {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 
