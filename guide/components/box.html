@@ -98,82 +98,106 @@
 
         <section class="component-doc">
             <article class="component-doc__group">
-                <h2>검색 박스 - 그리드 정렬</h2>
-                <div class="item"> 
-
-                    <form class="search-form" action="#" method="get">
-                        <fieldset class="search-form__fieldset">
-                            <legend class="sr-only">검색 조건</legend>
-
-                            <div class="search-form__grid">
-                                <label for="search1" class="search-form__label">검색1</label>
-                                <input type="text" id="search1" class="search-form__input">
-
-                                <label for="search2" class="search-form__label">검색2</label>
-                                <input type="text" id="search2" class="search-form__input">
-
-                                <div class="search-form__empty" aria-hidden="true"></div> <!-- 빈공간 -->
-
-                                <label for="search3" class="search-form__label">검색3</label>
-                                <input type="text" id="search3" class="search-form__input">
-
-                                <label for="search4" class="search-form__label">검색4</label>
-                                <input type="text" id="search4" class="search-form__input">
-
-                                <button type="submit" class="button search-form__btn">검색</button>
-                            </div>
-                        </fieldset>
-                    </form>
-
-                </div>
-                <pre class="brush: html gutter: false;"></pre>
-            </article>
-        </section>
-
-        <section class="component-doc">
-            <article class="component-doc__group">
                 <h2>검색박스</h2>
                 <div class="item"> 
 
-                    <form action="/search" method="get" class="search-form">
+                     <form class="search-form" action="#" method="get" role="search">
                         <fieldset class="search-form__fieldset">
-                            <legend class="sr-only">게시물 검색</legend>
+                            <legend class="sr-only">검색 조건</legend>
 
-                            <div class="search-form__row">
-                                <div class="search-form__field-group">
+                            <!-- 검색 항목들만 공통 -->
+                            <div class="search-form__content">
+                                <div class="search-form__row">
                                     <div class="search-form__field">
-                                        <label for="searchType1" class="search-form__label">검색 구분</label>
-                                        <select id="searchType1" name="searchType1" class="search-form__select">
-                                        <option value="all">전체</option>
-                                        <option value="title">제목</option>
-                                        <option value="content">내용</option>
-                                        <option value="writer">작성자</option>
-                                        </select>
+                                        <label for="modelName" class="search-form__label">모델명</label>
+                                        <div class="search-form__control">
+                                            <input type="text" id="modelName" name="modelName" class="search-form__input">
+                                        </div>
                                     </div>
 
                                     <div class="search-form__field">
-                                        <label for="searchType2" class="search-form__label">검색 옵션</label>
-                                        <select id="searchType2" name="searchType2" class="search-form__select">
-                                        <option value="latest">최신순</option>
-                                        <option value="oldest">오래된순</option>
-                                        </select>
+                                        <label for="nuclide" class="search-form__label">핵종</label>
+                                        <div class="search-form__control">
+                                            <input type="text" id="nuclide" name="nuclide" class="search-form__input">
+                                        </div>
+                                    </div>
+
+                                    <div class="search-form__field">
+                                        <label for="productName" class="search-form__label">품명</label>
+                                        <div class="search-form__control">
+                                            <input type="text" id="productName" name="productName" class="search-form__input">
+                                        </div>
+                                    </div>
+
+                                    <div class="search-form__field">
+                                        <label for="approvalStatus" class="search-form__label">승인여부</label>
+                                        <div class="search-form__control">
+                                            <select id="approvalStatus" name="approvalStatus" class="search-form__select">
+                                                <option value="">승인요청</option>
+                                                <option value="approved">승인</option>
+                                                <option value="rejected">반려</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="search-form__row">
+
+                                    <!-- 라디오 -->
+                                    <div class="search-form__radio-group">
+                                        <legend class="search-form__legend">라디오 체크</legend>
+                                        <label class="search-form__radio">
+                                            <input
+                                                type="radio"
+                                                name="range"
+                                                value="all"
+                                                class="search-form__radio-input"
+                                                checked
+                                            />
+                                            <span class="search-form__radio-text">전체</span>
+                                        </label>
+
+                                        <label class="search-form__radio">
+                                            <input
+                                                type="radio"
+                                                name="range"
+                                                value="recent"
+                                                class="search-form__radio-input"
+                                            />
+                                            <span class="search-form__radio-text">최근</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="search-form__field">
+                                        <label for="modelName" class="search-form__label">모델명</label>
+                                        <div class="search-form__control">
+                                            <input type="text" id="modelName" name="modelName" class="search-form__input">
+                                        </div>
+                                    </div>
+
+                                    <div class="search-form__field">
+                                        <label for="nuclide" class="search-form__label">핵종</label>
+                                        <div class="search-form__control">
+                                            <input type="text" id="nuclide" name="nuclide" class="search-form__input">
+                                        </div>
+                                    </div>
+
+                                    <div class="search-form__field">
+                                        <label for="productName" class="search-form__label">품명</label>
+                                        <div class="search-form__control">
+                                            <input type="text" id="productName" name="productName" class="search-form__input">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="search-form__row" style="margin: 20px 0;">
-                                <div class="tag-list" role="group" aria-label="검색 필터">
-                                    <button type="button" class="tag-list__item" aria-pressed="false">#전체</button>
-                                    <button type="button" class="tag-list__item" aria-pressed="false">#공지</button>
-                                    <button type="button" class="tag-list__item" aria-pressed="false">#이벤트</button>
-                                    <button type="button" class="tag-list__item" aria-pressed="false">#업데이트</button>
-                                </div>
-                            </div>
-
+                            <!-- 검색버튼 영역 -->
                             <div class="search-form__actions">
+                                <button type="submit" class="search-form__button">검색</button>
+                            </div>
+                            <!-- <div class="search-form__actions">
                                 <button type="submit" class="button button--primary">검색</button>
                                 <button type="reset" class="button button--secondary">초기화</button>
-                            </div>
+                            </div> -->
                         </fieldset>
                     </form>
 
