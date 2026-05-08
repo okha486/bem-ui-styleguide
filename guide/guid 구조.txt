@@ -1,3 +1,44 @@
+1. Foundations (기초)
+Typography (타이틀/텍스트)
+List (블릿)
+Icon
+
+2. Controls (사용자 입력)
+Form
+ ├─ Input / Textarea / Select
+ ├─ Checkbox / Radio
+ ├─ File Upload
+ ├─ Date / Email / Address
+
+ 3. Actions (액션)
+ Button
+
+ 4. Feedback / Helper
+ Feedback / Helper
+
+ 5. Layout / Surface 구조+박스UI
+ Box
+ Card (썸네일 포함)
+
+ 6. Navigation (상태 변화 UI)
+ Tab
+Accordion
+
+7. Data Display
+Table
+List (게시판 포함)
+Search
+
+8. Overlay
+Popup (Modal)
+
+9. Media
+Image
+Slider (Swiper)
+
+
+
+--------------
 form = block
 __group, __field-group = element
 
