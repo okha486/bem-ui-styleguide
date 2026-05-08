@@ -59,35 +59,6 @@ caption, .sr-only, .hidden, .IR {
   border:0;
 }
 
-/* 스킵링크 */
-#skip-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10000;
-  width: 100%;
-  text-align: center;
-  background-color: #000; 
-}
-#skip-nav a {  
-  display: flex ;
-  justify-content: center;
-  align-items: center;
-  height: 52px; 
-  font-size: 22px;
-  color: #fff;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  clip: inherit;
-  text-decoration: none;
-}
-.skip-nav:focus {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
 
 /* =========================================
   2. Root (Tokens)
