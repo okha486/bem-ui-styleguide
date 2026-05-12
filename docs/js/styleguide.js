@@ -5,10 +5,16 @@ $(function () {
     $('.btn_top').on('click', function () {
         $('html, body').animate({ scrollTop: 0 });
     });
+
+    // 첨부파일명 input 추가
+    $('#ex_filename').on('change', function () {
+        var fileName = $(this).val().split('\\').pop();
+        $(this).siblings('.file-attach__name').val(fileName);
+    });
     
     /* *******************************
     * 컨텐츠 구동 함수
-    ********************************** */
+    ********************************** */    
     fnTooltipAuto();    //툴팁 새로고침 시 마다 5초 보여짐
     //fnTooltipShown();    //툴팁 한번만 5초 보여짐
     fnTab();    // 탭
@@ -19,6 +25,7 @@ $(function () {
     fnZooms(); // 축소,확대 - zoom_container 영역지정
     fnZoomBody(); // 축속,확대 - body
     fnSwiper(); // 슬라이드
+    //
 });
 
 
@@ -37,7 +44,7 @@ function fnTooltipShown() {
     if (!localStorage.getItem('tooltipShown')) {
 
         // 툴팁 요소 선택
-        const $tooltip = $('.tooltip__text');
+        const $tooltip = $('.jstooltip_auto .tooltip__text');
 
         // 자동 노출 클래스 추가 (CSS에서 보이도록 처리)
         $tooltip.addClass('is-auto');
