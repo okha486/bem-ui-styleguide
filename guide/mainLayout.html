@@ -7,19 +7,158 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/component.css">
 <link rel="stylesheet" href="./css/main_layout.css">
 <link rel="stylesheet" href="./css/main_layout_respond.css">
 <title>layout</title>
+<style>
+.site-footer {
+    background-color: #f5f5f5;
+    color: #222;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-top: 1px solid #d9d9d9;
+}
+.site-footer__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+}
+.site-footer__inner--full {
+    max-width: none;
+}
+.site-footer__family {
+    background-color: #dfe7ef;
+    padding: 0.75rem 1.25rem;
+}
+.site-footer__family-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+.site-footer__family-item {
+    position: relative;
+}
+.site-footer__family-item::after {
+    display: inline-block;
+    content:'>';
+    margin-left: 10px;
+}
+.site-footer__family-item:last-child::after {
+    display: none;
+}
 
+.site-footer__link {
+    color: inherit;
+    text-decoration: none;
+}
+.site-footer__link:hover,
+.site-footer__link:focus {
+    text-decoration: underline;
+    outline: 2px solid #005ea8;
+    outline-offset: 2px;
+}
+.site-footer__body {
+    display: grid;
+    /* grid-template-rows: repeat(2, 100px);
+    grid-auto-rows: 100px; */
+    grid-template-columns: 520px 1fr;
+    gap: 30px;
+    align-items: stretch;
+    padding: 2rem 1.25rem;
+}
+.site-footer__logo {
+    grid-column: 1 / 3;
+}
+.site-footer__contact {
+    margin: 0;
+}
+.site-footer__contact dt {
+    min-width: 6.5rem;
+    font-weight: 700;
+}
+.site-footer__contact dd {
+    margin: 0;
+}
+.site-footer__contact-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.site-footer__address {
+    margin-bottom: 1.5rem;
+    font-style: normal;
+}
+
+.site-footer__contact-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.site-footer__info {
+    flex: 1 0 34%;
+}
+.site-footer__contact-list {
+    /* display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 1rem 2rem; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 20px;
+    margin: 0;
+    padding: 20px 0 0;
+    list-style: none;
+    border-top: 2px #ccc dotted
+}
+.site-footer__contact-name {
+    margin: 0 0 6px;
+    font-weight: 700;
+}
+.site-footer__contact-text {
+    margin: 0.125rem 0;
+    font-size: 0.875rem;
+}
+.site-footer__bottom {
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-top: 1px solid #cfcfcf;    
+}
+.site-footer__bottom-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+</style>
 </head>
 <body>
     <div class="main-portal">
-        <header class="main-portal__header">
-            <h1 class="main-portal__title" tabindex="0">헤더</h1>
-            <button type="button" class="main-portal__menu-button">
-                <span class="sr-only">전체 메뉴 열기</span>
-                ☰
-            </button>
+        <header class="header">
+            <div class="header__inner">
+                <div class="header__brand">
+                    <a href="#" class="header__logo">
+                        로고
+                    </a>
+                    <span class="header__system-name">
+                        타이틀 설명
+                    </span>
+                </div>
+
+                <div class="header__util">
+                    <button class="header__util-btn">로그인</button>
+                    <button class="header__util-btn">회원가입</button>
+                    <button class="header__util-btn">고객센터</button>
+                    <button class="header__util-btn">전체메뉴</button>
+                </div>
+            </div>
         </header>
 
         <main class="main-portal__main">
@@ -40,31 +179,30 @@
         </main>
 
         <footer class="site-footer" aria-labelledby="site-footer-title">
+            <h2 id="site-footer-title" class="sr-only">사이트 하단 정보</h2>
+            <!-- 관련기관 -->
+            <nav class="site-footer__family" aria-label="관련 기관 바로가기">
+                <ul class="site-footer__family-list">
+                    <li class="site-footer__family-item">
+                        <a href="#" class="site-footer__link">한국원자력안전재단 대표홈페이지</a>
+                    </li>
+                    <li class="site-footer__family-item">
+                        <a href="#" class="site-footer__link">원자력안전위원회</a>
+                    </li>
+                    <li class="site-footer__family-item">
+                        <a href="#" class="site-footer__link">한국원자력안전기술원</a>
+                    </li>
+                    <li class="site-footer__family-item">
+                        <a href="#" class="site-footer__link">한국원자력통제기술원</a>
+                    </li>
+                </ul>
+            </nav>
+
             <div class="site-footer__inner">
-                <h2 id="site-footer-title" class="sr-only">사이트 하단 정보</h2>
-
-                <!-- 관련기관 -->
-                <nav class="site-footer__family" aria-label="관련 기관 바로가기">
-                    <ul class="site-footer__family-list">
-                        <li class="site-footer__family-item">
-                            <a href="#" class="site-footer__link">한국원자력안전재단 대표홈페이지</a>
-                        </li>
-                        <li class="site-footer__family-item">
-                            <a href="#" class="site-footer__link">원자력안전위원회</a>
-                        </li>
-                        <li class="site-footer__family-item">
-                            <a href="#" class="site-footer__link">한국원자력안전기술원</a>
-                        </li>
-                        <li class="site-footer__family-item">
-                            <a href="#" class="site-footer__link">한국원자력통제기술원</a>
-                        </li>
-                    </ul>
-                </nav>
-
                 <!-- 관련정보 -->
                 <div class="site-footer__body">
                     <h3 id="site-footer-org-name" class="site-footer__logo">
-                        <img src="./images/logo.svg" alt="한국원자력안전재단">
+                        <img src="./images/logo.png" alt="사이트 로고">
                     </h3>
                     
                     <!-- 주소 -->
@@ -115,7 +253,7 @@
                                     <a href="mailto:sample1@example.com" class="site-footer__link">sample1@example.com</a>
                                 </p>
                             </div>
-                            <button type="button" class="site-footer__button">교육전문 쳇봇</button>
+                            <button type="button" class="button button--primary">교육전문 쳇봇</button>
                         </div>
 
                         <ul class="site-footer__contact-list">
@@ -189,10 +327,12 @@
                         </ul>
                     </div>
                 </div>
-
-                <!-- 개인정보 처리방침/카피라이드 -->
-                <div class="site-footer__bottom">
-
+            </div>
+            <!-- 개인정보 처리방침/카피라이드 -->
+            <div class="site-footer__bottom">
+                <div class="site-footer__bottom-inner">
+                    <span>개인정보처리방침 | 이용약관</span>
+                    <span>COPYRIGHT ⓒ 2023 한국원자력안전재단. ALL RIGHTS RESERVED.</span>
                 </div>
             </div>
         </footer>
