@@ -31,7 +31,7 @@
     <script src="../js/guidLayout.js"></script>
 
     <!-- 사용 컨텐츠 스크립트 참고 파일(사용파일) -->
-    <script src="../js/styleguide.js"></script>
+    <script src="../js/componentsJs.js"></script>
 </head>
 <body>
 <div id="styleguide" class="component-page">
@@ -221,41 +221,9 @@
 
         <section class="component-doc">
             <article class="component-doc__group">
-                <h2>아이콘</h2>
+                <h2>아이콘 + 텍스트</h2>
                 <div class="item"> 
                     
-                    <!-- 버튼 아이콘 -->
-                    <button class="button button--radius9">
-                        <span class="icon icon--md icon--left" aria-hidden="true">
-                            <i class="ri-close-fill"></i>
-                        </span>
-                        <span class="sr-only">삭제</span>
-                    </button>
-                    
-                    <button class="button button--radius9">
-                        <span class="icon icon--md icon--left" aria-hidden="true">
-                            <i class="ri-mail-line"></i>
-                        </span>
-                        <span class="sr-only">이메일</span>
-                    </button>
-
-                    <button type="button" class="button button--arrow js-toggle" data-target="neq_certi_a_01">
-                        <span class="sr-only">내용 보기</span>
-                    </button>                    
-
-                    <br><br>
-
-                    <button class="button button--alram">
-                        <span class="icon icon--xxl" aria-hidden="true">
-                           <i class="ri-notification-2-line"></i>
-                        </span>
-                        <span class="button--alram__number">5</span>
-                        <span class="sr-only">알림</span>
-                    </button>
-
-                    <br><br>
-
-                    <!-- 아이콘 + 텍스트 -->
                     <span class="icon">
                         <span class="icon icon--sm" aria-hidden="true">
                             <i class="ri-mail-line"></i>
@@ -279,6 +247,10 @@
                         <i class="ri-share-line"></i>
                     </span>
                     <!-- 사용법(E) -->
+                    
+                    <span class="icon icon--lg" aria-hidden="true">
+                        <span class="help-text__icon" aria-hidden="true"></span>
+                    </span>
 
                     <span class="icon icon--lg" aria-hidden="true">
                         <i class="ri-search-line"></i>
@@ -292,7 +264,11 @@
                         <i class="ri-more-line"></i>
                         <i class="ri-phone-line"></i>
                         <i class="ri-close-fill"></i>
-                        
+                    </span>
+
+                    <br>
+                    
+                    <span class="icon icon--lg" aria-hidden="true">
                         <i class="ri-arrow-right-long-line"></i>
                         <i class="ri-arrow-up-s-line"></i>
                         <i class="ri-arrow-down-s-line"></i>
@@ -305,10 +281,45 @@
                         <i class="ri-skip-right-line"></i>
                         <i class="ri-skip-left-line"></i>
                         <i class="ri-play-line"></i>
-
-                        <span class="help-text__icon" aria-hidden="true"></span>
+                        
+                        <i class="ri-triangle-fill"></i>
                     </span>
+                </div>
 
+                <pre class="brush: html gutter: false;"></pre>
+            </article>
+        </section>
+
+        <section class="component-doc">
+            <article class="component-doc__group">
+                <h2>버튼 아이콘</h2>
+                <div class="item"> 
+                    
+                    <button class="button button--radius9">
+                        <span class="icon icon--md icon--left" aria-hidden="true">
+                            <i class="ri-close-fill"></i>
+                        </span>
+                        <span class="sr-only">삭제</span>
+                    </button>
+                    
+                    <button class="button button--radius9">
+                        <span class="icon icon--md icon--left" aria-hidden="true">
+                            <i class="ri-mail-line"></i>
+                        </span>
+                        <span class="sr-only">이메일</span>
+                    </button>
+
+                    <button type="button" class="button button--arrow js-toggle" data-target="neq_certi_a_01">
+                        <span class="sr-only">내용 보기</span>
+                    </button>  
+
+                    <button class="button button--alram">
+                        <span class="icon icon--xxl" aria-hidden="true">
+                           <i class="ri-notification-2-line"></i>
+                        </span>
+                        <span class="button--alram__number">5</span>
+                        <span class="sr-only">알림</span>
+                    </button>
 
                 </div>
                 <pre class="brush: html gutter: false;"></pre>
