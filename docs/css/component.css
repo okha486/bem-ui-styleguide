@@ -815,7 +815,11 @@ Create date : 2026-04
   border: 0;
   flex: 1 1 auto;
 }
-.file-attach__name {
+.upload-wrap {
+  position: relative;
+  flex: 1 1 auto;
+}
+.file-attach-name {
   display: inline-block;
   padding: 8px 10px;
   line-height: 24px;
@@ -826,7 +830,27 @@ Create date : 2026-04
   border-radius: 4px;
   appearance: none;
   flex: 1 1 auto;
-  max-width: calc(100% - 95px);
+  width: 100%;
+  max-width: calc(100% - 10px);
+  padding-right: 36px;
+}
+.file-delete-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background: transparent;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #999;
+}
+.file-delete-btn.is-show {
+  display: flex;
 }
 .file-attach__button {
   display: inline-block;
@@ -1648,12 +1672,6 @@ a.button.button--txt:focus {
   table-layout: fixed;
   width: 100%;
 }
-
-/* 기본 테이블 modifier */
-.table--basic {
-  min-width: 800px;
-}
-
 .table th,
 .table td {
   padding: 12px 10px;
@@ -1665,6 +1683,14 @@ a.button.button--txt:focus {
   background: #f5f5f5;
   border-bottom: 0;
   font-weight: 600;
+}
+
+/* 테이블 modifier */
+.table--basic {
+  min-width: 800px;
+}
+.table--form {
+  border-bottom: 1px solid #ddd
 }
 
 /* Responsive (필요 시) */
