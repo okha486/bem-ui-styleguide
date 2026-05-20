@@ -5,12 +5,6 @@ $(function () {
     $('.btn_top').on('click', function () {
         $('html, body').animate({ scrollTop: 0 });
     });
-
-    // 첨부파일명 input 추가
-    $('#ex_filename').on('change', function () {
-        var fileName = $(this).val().split('\\').pop();
-        $(this).siblings('.file-attach__name').val(fileName);
-    });
     
     /* *******************************
     * 컨텐츠 구동 함수
@@ -25,6 +19,7 @@ $(function () {
     fnZooms(); // 축소,확대 - zoom_container 영역지정
     fnZoomBody(); // 축속,확대 - body
     fnSwiper(); // 슬라이드
+    fnFileUpload(); // 첨부파일
 });
 
 
@@ -590,4 +585,50 @@ function fnZoomBody() {
     if(bodyZoom == 200) {
         alert("더 이상 확대할 수 없습니다."); // 화면 확대율이 200% 이상일 경우 
     }
+}
+
+
+
+function fnFileUpload() {
+
+    // 첨부파일명 input 추가
+    // $('#ex_filename').on('change', function () {
+    //     var fileName = $(this).val().split('\\').pop();
+    //     $(this).siblings('.file-attach__name').val(fileName);
+    // });
+
+    // 첨부파일 선택
+    $(document).on('change', '.file-attach__input', function () {
+        const $fileBox = $(this).closest('.file-attach');
+        const $deleteBtn = $fileBox.find('.file-delete-btn');
+
+        let fileName = '';
+
+        if (this.files && this.files.length > 0) {
+            fileName = this.files[0].name;
+
+            // 삭제버튼 노출
+            $deleteBtn.addClass('is-show');
+
+        } else {
+            // 삭제버튼 숨김
+            $deleteBtn.removeClass('is-show');
+        }
+        $fileBox.find('.file-attach-name').val(fileName);
+    });
+
+    // 첨부파일 삭제
+    $(document).on('click', '.file-delete-btn', function () {
+        const $fileBox = $(this).closest('.file-attach');
+
+        // 파일 초기화
+        $fileBox.find('.upload-hidden').val('');
+
+        // 파일명 초기화
+        $fileBox.find('.file-attach-name').val('');
+
+        // 삭제버튼 숨김
+        $(this).removeClass('is-show');
+    });
+
 }
