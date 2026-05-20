@@ -224,7 +224,12 @@
                             <p class="file-attach__text">첨부서류</p>
 
                             <div class="file-attach">
-                                <input class="file-attach__name" placeholder="파일선택" disabled>
+                                <div class="upload-wrap">
+                                    <input type="text" class="file-attach-name" placeholder="파일선택" readonly>
+                                    <button type="button" class="file-delete-btn" aria-label="첨부파일 삭제" >
+                                        <i class="ri-close-line"></i>
+                                    </button>
+                                </div>
                                 <label for="ex_filename" class="file-attach__button">
                                     파일선택
                                     <i class="ri-question-line file-attach__help-icon" aria-hidden="true"></i>
@@ -235,7 +240,6 @@
                                         합쳐서 등록해주세요.
                                     </span>
                                 </label>
-
                                 <input type="file" id="ex_filename" class="file-attach__input">
                             </div>
                         </div>
